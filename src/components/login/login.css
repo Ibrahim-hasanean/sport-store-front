@@ -1,0 +1,58 @@
+.login{
+    display: flex;
+    flex-direction: column;   
+    align-items: center;
+}
+
+#form{
+    position: relative;
+    margin: auto;
+    top:50px;
+    display: flex;
+    flex-direction: column;
+    width: max-content;   
+    padding: 15px;
+    border-radius: 5px;
+}
+
+#form input{
+    margin:15px;   
+    border:none;
+    border-radius: 5px;
+    height: 44pt;
+    width: 335pt;
+    font-size: 12pt;    
+}
+.text{
+    background: #EFEFF4;
+}
+
+#submit{
+    background-color:blue;
+    color: white;
+}
+
+.error{
+    color: red;
+    text-align: left;
+    margin-left: 15px;
+    margin-top: 0;
+}
+.socialLoginContainer{
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    width: max-content;
+    
+}
+.socialLogin{
+    position: relative;
+    background: blue;
+    color: whitesmoke;
+    top:50px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;    
+    margin: 10px;
+}
+

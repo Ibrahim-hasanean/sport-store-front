@@ -1,0 +1,38 @@
+#nav{
+    background: #2F7EB8;
+    position: fixed;  
+    width: 100%;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#nav ul{    
+    list-style: none;      
+    width: 95%;  
+    display: flex;    
+    margin:0;    
+}
+#nav ul li{
+    margin-left: 10px;
+}
+#nav ul li a,#loginButton a {
+    text-decoration: none;
+    color: white;
+    font-size: large;    
+    width: max-content;
+}
+
+#loginButton{
+    background: blue;
+    width:100px;
+    height: 40px;
+    border-radius:5px; 
+    margin: 15px;  
+    border: none;
+    color: white;       
+}
+
+
+
