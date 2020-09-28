@@ -3,8 +3,9 @@ import useContext from "../../context/AuthContext";
 import "./profile.css"
 import axios from "axios";
 let  Profile =  ()=> {
-    let {userData,setUserData} = useContext()  
+    let {logout,userData,setUserData} = useContext()  
     const [isLoading,setIsLoading] = useState(false)   
+    
     useEffect(()=>{  
         let getUseData = ()=>{
             let token = localStorage.getItem("token")
@@ -13,7 +14,12 @@ let  Profile =  ()=> {
                 let {email,name} = response.data;
                 setUserData({...userData,name ,email})
                 setIsLoading(true)
-            }).catch(e=>{console.log(e)})     
+            }).catch(e=>{
+                console.log(e)
+                if(e.response.status === 401){
+                    logout()                   
+                }
+            })     
         }      
     if(Object.keys(userData).length===0){
         getUseData()

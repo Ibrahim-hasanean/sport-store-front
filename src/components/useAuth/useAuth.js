@@ -8,8 +8,7 @@ const useAuth = () => {
        const [errors,setErrors] = useState({})
         
        let validateEmail = (e)=>{           
-        let value = e.target.value  
-        console.log(value)     
+        let value = e.target.value           
         if(!validator.isEmail(value)){
             setValidEmail(false)
             setErrors({...errors,email:"eamil not valid"})

@@ -55,11 +55,12 @@ let Login= (props) => {
         console.log(response)
         try{
         let sendToken = await axios.post("https://sportstore1.herokuapp.com/api/v1/facebooklogin",{accessToken:response.accessToken});
-            let {token,status,email,name} = sendToken.data;
+            let {token,status,email,name,isAdmin} = sendToken.data;
+            console.log(sendToken.data)
             if(status === 200){
                 console.log(token)
                 setToken(token)
-                setUserData({email,name})
+                setUserData({email,name,isAdmin})
         }            
     }catch(e){
         if(e.response.status === 409){

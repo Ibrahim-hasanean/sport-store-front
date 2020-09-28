@@ -11,6 +11,7 @@ import Signup from './components/signup/Signup';
 import ForgetPassword from './components/forgetpassword/ForgetPassword';
 import ConfirmCode from './components/confirmcode/ConfirmCode';
 import NewPassword from './components/newpassword/NewPassword';
+import Admin from './components/admin/Admin';
 function App() {
   let token = localStorage.getItem("token")  || null 
   let [isToken,setIsToken]=  useState(token)  
@@ -32,6 +33,7 @@ function App() {
     <div>
     <Switch>   
       <ProtectRoute exact path="/" component={Home}/>
+      <ProtectRoute exact path="/admin" component={Admin}/>
       <Route exact path="/login" component={Login}/>
       <Route exact path="/signup" component={Signup}/> 
       <Route exact path="/forgetpassword" component={ForgetPassword}/>
