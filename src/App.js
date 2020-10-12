@@ -1,17 +1,19 @@
 import React,{useState} from 'react';
 import './App.css';
-import Login from "./components/login/Login"
+import Login from "./pages/login/Login"
 import{AuthContext} from "./context/AuthContext";
 import Nav from "./components/nav/nav";
-import Home from "./components/home/home"
+import Home from "./pages/home/home"
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
-import Profile from './components/profile/profile';
-import ProtectRoute from "./components/protectRoute"
-import Signup from './components/signup/Signup';
-import ForgetPassword from './components/forgetpassword/ForgetPassword';
-import ConfirmCode from './components/confirmcode/ConfirmCode';
-import NewPassword from './components/newpassword/NewPassword';
-import Admin from './components/admin/Admin';
+import Profile from './pages/profile/profile';
+import ProtectRoute from "./pages/protectRoute"
+import Signup from './pages/signup/Signup';
+import ForgetPassword from './pages/forgetpassword/ForgetPassword';
+import ConfirmCode from './pages/confirmcode/ConfirmCode';
+import NewPassword from './pages/newpassword/NewPassword';
+import Admin from './pages/admin/Admin';
+import ItemPage from './pages/ItemPage/ItemPage';
+import TeamItemsPage from './pages/TeamItemsPage/TeamItemsPage';
 function App() {
   let token = localStorage.getItem("token")  || null 
   let [isToken,setIsToken]=  useState(token)  
@@ -32,14 +34,16 @@ function App() {
     <Nav/>    
     <div>
     <Switch>   
-      <ProtectRoute exact path="/" component={Home}/>
-      <ProtectRoute exact path="/admin" component={Admin}/>
       <Route exact path="/login" component={Login}/>
       <Route exact path="/signup" component={Signup}/> 
       <Route exact path="/forgetpassword" component={ForgetPassword}/>
       <Route exact path="/confirmcode" component={ConfirmCode}/>
       <Route exact path="/newpassword" component={NewPassword}/>
+      <ProtectRoute exact path="/" component={Home}/>
+      <ProtectRoute exact path="/admin" component={Admin}/>     
       <ProtectRoute exact path="/profile" component={Profile}/>  
+      <ProtectRoute exact path="/item/:id" component={ItemPage}/> 
+      <ProtectRoute exact path="/TeamItemsPage" component={TeamItemsPage}/>  
       </Switch>   
       </div>
       </Router> 

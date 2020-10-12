@@ -1,0 +1,28 @@
+#itemDetaisTeam{
+    color: wheat;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;    
+    grid-area: team;
+}
+#itemDetaisTeam p, #itemDetaisTeam h2{
+    margin: 0;
+    color: wheat;
+    text-align: left;
+    margin-left:15px ;
+    margin-bottom: 15px;
+}
+#itemDetaisTeam p{
+    font-size: medium;
+}
+#itemDetaisDiscount{
+    grid-area: price;    
+}
+#itemDetaisDiscount p{
+    color: white;
+    font-weight: bold;
+    font-size: 32px;
+    top: 15px;
+    position: relative;
+}

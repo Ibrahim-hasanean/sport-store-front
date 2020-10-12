@@ -1,0 +1,41 @@
+#fav{
+    position: relative;
+    width: 40px;
+    height: 30px;
+    grid-area: fav;
+    align-self: center;
+    justify-self: center;      
+}
+.addFav div{
+    background-color: red;       
+  }
+.addFav{
+    width: 40px;
+    height: 30px;
+    align-self: center;
+    justify-self: center;
+}
+  
+.fav1,.fav2{
+    position: absolute;
+    background-color: white;
+    width: 20px;
+    height: 30px;
+    grid-area: fav; 
+    align-self: center;
+    justify-self: center; 
+    transition: background-color 0.5s ease-in-out;
+}
+.fav1{   
+    transform-origin: 100% 100%;
+    transform:rotate(45deg);
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+}
+.fav2{    
+    transform:rotate(-45deg);    
+    transform-origin: 0 100%;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    left: 18px;
+}

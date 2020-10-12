@@ -1,0 +1,69 @@
+#container{   
+    margin: auto;   
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;  
+    grid-template-rows: 1fr 2fr 1fr;  
+    grid-template-areas: "leftButton  card rightButton"
+                         ". slider ."   
+    
+    ;
+    width: 580px;
+    height: 320px;  
+    margin-top: 25px;
+    
+}
+.cardContainer{
+    position: relative;   
+    width: 500px;
+    height: 340px;
+    grid-area:card ;
+    overflow: hidden;
+   
+}
+#hotDealsContainer{
+    display: flex;
+    position: absolute;
+    transition: transform 1s ease-in-out;     
+}
+#leftButton{
+    grid-area: leftButton;
+    align-self: center;
+    justify-self: right;
+    position: relative;
+    left: 17px;
+    z-index: 1;
+    background-color: lightsteelblue;
+    padding: 5px;
+    border: none;
+}
+
+#rightButton{
+    grid-area: rightButton;
+    align-self: center;
+    justify-self: left;
+    z-index: 1;
+    position: relative;
+    right: 17px;
+    background-color: lightsteelblue;
+    padding: 5px;
+    border: none;
+}
+
+#slider{
+    width: max-content;
+    height: max-content;
+    display: flex;   
+    grid-area: slider;
+    align-self: flex-end;
+    justify-self: center;
+    bottom: 15px;
+    position: relative;
+}
+.curruentItem{
+    background-color:#69ACDF;
+    width: 14px;
+    border-radius: 35%;     
+ }
+.sliderChildern{
+    border:solid 0.1px black;
+}

@@ -1,0 +1,11 @@
+#home{
+    top: 60px;
+    position: relative;
+    display: flex;
+    flex-direction: column;    
+    width: 95%;
+    margin: auto;
+}
+
+
+

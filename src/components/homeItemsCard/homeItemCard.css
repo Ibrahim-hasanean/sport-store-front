@@ -1,0 +1,59 @@
+/* #fav{
+  position: relative;
+  width: 40px;
+  height: 30px;
+  grid-area: fav;
+  align-self: center;
+  justify-self: right;  
+} */
+#card{
+  grid-area: card;  
+ }/*
+.fav1,.fav2{
+    position: absolute;
+    background-color: white;
+    width: 20px;
+    height: 30px;
+    /* grid-area: fav;
+    /* align-self: center;
+    justify-self: right; 
+    transition: background-color 0.5s ease-in-out;
+}/*
+.fav1{
+     left: 61px; 
+    transform-origin: 100% 100%;
+    transform:rotate(45deg);
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+}
+.fav2{    
+    transform:rotate(-45deg);    
+    transform-origin: 0 100%;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    left: 18px;
+} */
+
+
+#team{
+  grid-area: team;
+  
+}
+#team p{
+  font-size: large;
+  color: white;
+  text-align: left;
+  width: 80%;
+ 
+} 
+#price{
+  grid-area: price;
+}
+#price h2{
+  color: white;
+}
+/* 
+.addFav div{
+  background-color: red;
+ 
+} */

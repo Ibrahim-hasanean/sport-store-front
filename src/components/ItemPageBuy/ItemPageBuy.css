@@ -1,0 +1,36 @@
+#itemBuyContainer{
+    width: 30%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+
+}
+
+#itemBuyContainer button{
+    background: #2F7EB8;
+    color: white;
+    width: 30%;
+    padding: 15px;
+    border: none;
+    border-radius: 15px;
+}
+
+#likeDiv{
+    position: relative;
+    width: 40px;
+    height: 30px; 
+    background: #8E8E93;  
+    margin: auto;
+    top: 15px;   
+}
+#likeDivContainer{
+    position: relative;
+    width: 60px;
+    height: 60px; 
+    background: #8E8E93; 
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+
+}

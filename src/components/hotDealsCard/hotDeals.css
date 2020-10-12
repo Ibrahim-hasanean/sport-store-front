@@ -1,0 +1,77 @@
+#topIcon{
+    position: relative;
+    background: #FF7700;
+    margin: 0;    
+    border-top-right-radius: 20px;
+    color: black;
+    grid-area: icon;
+    justify-self: flex-end;
+    align-self: flex-start;
+    /* top:8px;
+    right:12px; */
+    font-size: medium;
+    font-weight: bold;
+    padding: 5px;
+}
+
+#team{
+    color: wheat;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;    
+    grid-area: team;
+}
+#team p, #team h3{
+    margin: 0;
+    color: wheat;
+    text-align: left;
+
+}
+#team p{
+    font-size: medium;
+}
+
+#discount{
+    color: wheat;
+    position: relative;
+    display: flex;    
+    justify-content: flex-end;
+    align-items: flex-start;
+    grid-area: discount;
+    /* right: 30px; */
+    
+}
+
+#discount p:first-child {
+    margin: 0;
+    color: black; 
+    background: #FF7700;
+    font-size: small;   
+    margin: 5px;
+    padding: 2px 5px;
+    border-radius: 5px;
+}
+
+#discount p:last-child {
+    margin: 0;
+    color: wheat; 
+    font-size: large;   
+    margin: 5px;
+}
+
+#slider{
+    width: max-content;
+    height: max-content;
+    display: flex;   
+    grid-area: slider;
+    align-self: flex-end;
+    justify-self: center;
+}
+.sliderChildern{
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    margin: 2px;
+    border-radius: 50%;
+}

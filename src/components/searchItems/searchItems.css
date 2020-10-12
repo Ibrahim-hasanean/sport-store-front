@@ -1,0 +1,33 @@
+#searchItemsContainer{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    flex-wrap: wrap;
+    margin: auto;
+    position: relative;
+    top: 50px;
+}
+#searchResult{
+    color: #8E8E93;
+}
+
+#searchHeader{
+    display: flex;
+    width: 80%;
+    justify-content: left;   
+    align-items: center;
+    margin: auto;
+}
+#searchHeader h3{
+    position: relative;
+    left: 30px;
+}
+#searchHeader button{
+    border: none;
+    height: 30px; 
+    width: 70px;
+    border-radius: 20%;
+    font-weight: 500;
+   background: #2F7EB8;
+    font-size: large;
+}

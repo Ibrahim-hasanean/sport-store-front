@@ -1,0 +1,49 @@
+#itemPageDetailsContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+#itemPageDetails{
+    display: flex;
+    width: 30%;
+    margin:auto;
+    justify-content: space-around;
+    position: relative;
+    margin-top: 30px;
+    color: black;
+    font-size: larger;   
+}
+
+#itemPageDetails select{
+    width: 15%;
+    border: none;
+    background: #EFEFF4;
+    border-radius: 15px;
+    font-size: medium;
+    font-weight: bold;
+    padding: 5px;
+}
+#itemPageDetails select option{
+    width: 15%;
+    border: none;
+    background: #EFEFF4;
+    font-size: medium;
+    font-weight: bold;
+}
+#itemPageDetails button{
+    border-radius: 50%;
+    border: none;
+    font-size: larger;
+    color: #8E8E93;
+    background: EFEFF4;  
+    width: 40px;
+    height: 40px; 
+    padding: 5px;
+
+}
+#itemPageDetails{
+    font-size: larger;
+    font-weight: 500;
+};
+
+

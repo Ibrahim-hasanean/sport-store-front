@@ -1,0 +1,69 @@
+#teamSliderContainer{   
+   
+    width: 100%;    
+    margin: auto;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 1fr;
+    grid-template-rows: 1fr 2fr;
+    grid-template-areas: ". teams viewAll ."
+                          "leftSlid teamSlider teamSlider rightSlid"    
+    ;
+}
+
+#teamSliderContainer h3{    
+    grid-area: teams;  
+    align-self: center;
+    justify-self: start;
+}
+#teamSliderContainer p{
+    grid-area: viewAll;  
+    font-size: medium;
+    align-self: center;
+    justify-self: end;
+}
+#teamSlider{
+    position: relative;
+    height: 40px;    
+    width: 830px;
+    grid-area: teamSlider;   
+    align-self: center;
+    display: flex;
+    justify-content: space-between;
+    overflow:hidden;
+}
+#teamsContainer{
+    position: absolute;
+    display: flex;    
+    transition: transform 0.4s ease-in-out;
+}
+.teamImages{
+    width: 40px;
+    margin: 0px 15px; 
+    height: 40px;    
+}
+#leftSlid , #rightSlid{
+    background-color: lightsteelblue;
+}
+#leftSlid{
+    grid-area:leftSlid ;
+    align-self: center;
+    justify-self: right;
+    padding: 5px;
+    border: none;
+    position: relative;
+    right: 20px;
+    z-index: 1;
+}
+
+#rightSlid{
+    grid-area: rightSlid ;
+    align-self: center;
+    justify-self: left;
+    padding: 5px;
+    border: none;
+    position: relative;
+    left: 20px;
+    z-index: 1;
+}
+

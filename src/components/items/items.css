@@ -1,0 +1,50 @@
+#allItems{
+    position: relative;
+    width: 100%;   
+}
+#allItems h3{
+    text-align: left;
+}
+#itemsList{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    margin:auto;    
+}
+
+#itemsList button{
+    width: max-content;
+    font-size: large;
+    color: #8E8E93;
+    background-color: white;
+    border: none;
+    font-weight: bold;
+}
+#itemsList button:focus{
+    color: #2F7EB8;
+}
+
+#itemsContainer{  
+    flex-wrap: wrap;
+    width: 80%;   
+    margin: auto; 
+}
+#popular{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;    
+    
+}
+#new{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;    
+}
+.focusBorder{    
+    background: #2F7EB8;
+    width: 30%;
+    height: 3px;
+    margin: auto;
+    margin-top: 3px;
+}

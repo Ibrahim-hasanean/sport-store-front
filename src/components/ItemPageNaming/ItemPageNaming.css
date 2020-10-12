@@ -1,0 +1,38 @@
+#namingContainer{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin:auto;
+}
+
+#namingContainer label{
+    text-align: left;
+    color: #8E8E93;
+    font-weight: 500;
+    padding: 10px;
+}
+
+#naming{
+    display: flex;
+    justify-content: space-between;
+}
+
+.naminButton{
+    background: #EFEFF4;
+    padding: 10px 20px;
+    font-size: larger;
+    font-weight: 500;
+    color: #8E8E93;
+    border: none;
+    border-radius: 15px;
+}
+
+.selectdName{
+    background: #EFEFF4;
+    padding: 10px 20px;
+    font-size: larger;
+    font-weight: 500;
+    color: #2F7EB8;
+    border:solid 1px #2F7EB8;
+    border-radius: 15px;
+}
