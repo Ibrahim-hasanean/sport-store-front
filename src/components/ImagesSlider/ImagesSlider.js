@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import ItemDetails from "../ItemPageCard/ItemPageCard";
-function ImagesSlider({items}) {    
+function ImagesSlider({images}) {    
    const [index,setIndex]= useState(0)     
    const  slideToRight = async()=>{
     let hotDeal = document.getElementById("hotDealsContainer")       
@@ -14,26 +14,26 @@ function ImagesSlider({items}) {
      setIndex(index-1)    
    }
     return (
-        <div id="container" style={{height:"500px"}}>     
+        <div id="container" style={{height:"500px", width:"500px", margin:0,marginTop:"30px"}}>     
          {index===0?         
             <button disabled  id="leftButton" >{"<"}</button>:
             <button onClick={slideToLeft} id="leftButton" >{"<"}</button>
             }
-        {index < items.length-1?
+        {index < images.length-1?
             <button onClick={slideToRight} id="rightButton">{">"}</button>:
             <button disabled  id="rightButton">{">"}</button>
             }  
                 <div className="cardContainer" style={{height:"500px",width:"400px"}}>   
                 <div id="hotDealsContainer" style={{height:"500px"}}>  
-                {     items.map((item,index)=>{ 
-                        return  <ItemDetails item={item} key={index} />  
+                {     images.map((image,index)=>{ 
+                        return  <ItemDetails image={image} key={index} />  
                 })    
                 }  
                 </div>  
                 </div> 
                 <div id="slider">  
                 {
-                items.map((item,itemIndex)=>{
+                images.map((item,itemIndex)=>{
                     if(itemIndex === index){
                         return <div key={itemIndex} className="sliderChildern curruentItem"></div>
                     }

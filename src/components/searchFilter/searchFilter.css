@@ -1,0 +1,76 @@
+#filterDetails{
+    width: 85%;
+    border: 1px solid #EFEFF4;  
+    position: relative;
+    top: 15px;
+    display: none;
+    opacity: 0;  
+    transition:opacity  2s ease-in-out ;
+}
+.price{
+    width: 40%;
+    border: 1px solid #8E8E93;
+    color: #8E8E93;
+    background-color: white;
+    height: 40px;
+    border-radius: 15px;
+}
+#filterDetails p{
+    color: black;
+    font-size: medium;   
+    font-weight: 500;
+}
+
+#filterDetails button{   
+    margin: 5px; 
+    padding: 15px 25px;   
+    outline: none;
+    border-radius: 5px;
+}
+
+#filterDetails div{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;  
+    align-items: center;
+}
+#filterDetails div:first-child{
+    width:max-content;
+    margin: auto;
+    margin-top: 15px;
+}
+#filterDetails span{
+    width: 40px;
+    height: 5px;
+    background-color: #8E8E93;
+    border-radius: 5px;
+}
+
+#filterDetails h3{
+    border-bottom: solid 1px #EFEFF4;
+}
+
+.priceButton{
+    width: 40%;
+    background-color: white;
+    color: #8E8E93;
+    border: solid 1px #8E8E93;
+}
+
+.lastDiv button{
+    width: 40%;
+    border: 1px solid #2F7EB8;  
+    font-weight: 700;
+    font-size: medium;  
+}
+.lastDiv button:first-child{
+    background-color: white;
+    color:#2F7EB8;
+    
+
+}
+.lastDiv button:last-child{
+    background-color: #2F7EB8;
+    color: white;
+
+}

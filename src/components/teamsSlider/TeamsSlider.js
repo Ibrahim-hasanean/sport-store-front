@@ -1,6 +1,5 @@
 import React,{useState}from 'react';
 import "./teamsSlider.css";
-import axios from "axios";
 import { Redirect } from 'react-router-dom';
 function TeamsSlider({setSelectTeam}) {
     const [index,setIndex] = useState(0);

@@ -1,8 +1,7 @@
 #namingContainer{
     display: flex;
     flex-direction: column;
-    width: 30%;
-    margin:auto;
+    margin: 30px 0;   
 }
 
 #namingContainer label{
@@ -11,12 +10,13 @@
     font-weight: 500;
     padding: 10px;
 }
-
 #naming{
     display: flex;
     justify-content: space-between;
 }
-
+#naming button{
+    width: 30%;
+}
 .naminButton{
     background: #EFEFF4;
     padding: 10px 20px;
@@ -26,7 +26,6 @@
     border: none;
     border-radius: 15px;
 }
-
 .selectdName{
     background: #EFEFF4;
     padding: 10px 20px;

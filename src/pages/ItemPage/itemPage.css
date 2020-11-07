@@ -1,8 +1,34 @@
 #itemPageContainer{
     position: relative;
-    top: 60px;
+    top: 80px;
     display: flex;
-    flex-direction: column;    
-    width: 95%;
-    margin: auto;
+    width: 95%;  
+    justify-content: center; 
+    
+}
+#itemPageContainer h2{
+    margin:0;
+}
+#itemDetailesContainer{
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-around;
+    align-items: stretch;
+    height: 400px;
+    width: 35%;
+    position: relative;
+    top: 70px;
+}
+.itemPageDetailes{
+    position: relative;
+    top: 15px;
+    display: flex;
+    justify-content: space-around;
+}
+.itemPageDetailes p , .itemPageDetailes h2{
+    color: black;
+    text-align: center;
+    margin:5px; 
+    font-size: large;
+    
 }

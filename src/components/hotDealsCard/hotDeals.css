@@ -21,6 +21,7 @@
     flex-direction: column;
     justify-content: flex-start;    
     grid-area: team;
+    left: 30px;
 }
 #team p, #team h3{
     margin: 0;

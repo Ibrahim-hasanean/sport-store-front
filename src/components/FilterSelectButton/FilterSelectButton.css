@@ -1,0 +1,11 @@
+.selected{
+    color: #69ACDF;
+    border: solid 1px #69ACDF;
+    background-color: white;
+}
+.default{ 
+    background-color: #00000012;
+    color: #8E8E93;  
+    border: none;   
+}
+ 

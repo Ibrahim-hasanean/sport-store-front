@@ -7,15 +7,15 @@
                          ". slider ."   
     
     ;
-    width: 580px;
-    height: 320px;  
+    width: 700px;
+    height: 500px;  
     margin-top: 25px;
     
 }
 .cardContainer{
     position: relative;   
-    width: 500px;
-    height: 340px;
+    width: 700px;
+    height: 500px;
     grid-area:card ;
     overflow: hidden;
    

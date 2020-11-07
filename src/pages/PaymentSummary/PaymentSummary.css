@@ -1,0 +1,47 @@
+#summaryContainer{
+    position: relative;
+    top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+#summaryItemsContainer{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: auto;
+    align-items: center;
+}
+#paymentResult{
+    position: fixed;
+    display: flex;
+    width: 35%;
+    justify-content: center;
+    height: 50px;
+    background-color: #C7E6FE;
+    top: 90%;
+    padding: 15px 0;
+    border-top-left-radius:15px;
+    border-top-right-radius: 15px;
+}
+#paymentResult div, #paymentResult button{
+    width: 40%;
+    font-size: large;
+}
+#paymentResult button{
+    background-color: #2F7EB8;
+    color: white;
+    border: none;
+    border-radius: 15px;
+}
+
+#paymentResult div{
+    background-color: #C7E6FE;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    color: #2F7EB8;
+    font-size: 24px;
+    font-stretch: expanded;
+    text-align: center;
+    font-weight: 600;
+}

@@ -1,4 +1,21 @@
 #profile{
     position: relative;
     top: 100px;
+    width: 60%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+#profile p,#profile h2{
+    margin: 0;
+}
+#profile p{
+    color: black;
+    font-size: medium;
+    color: #414141;
+}
+#userProfileName{
+    display: flex;
 }

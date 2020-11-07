@@ -1,0 +1,27 @@
+.paymentForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 400px;
+    top: 40px;
+    position: relative;
+    width: 70%;
+    margin: auto;
+}
+.totalPrice{
+    display: flex;
+    justify-content: center;
+
+}
+.totalPrice p:first-child{
+    color: black;
+    font-size: large;
+    font-weight: 700;
+    margin-right: 15px;
+}
+
+.totalPrice p:last-child{
+    color: #69ACDF;
+    font-size: large;
+    font-weight: 700;
+}

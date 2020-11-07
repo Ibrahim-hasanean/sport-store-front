@@ -1,0 +1,14 @@
+
+.cartIcon p{
+    float: right;
+    top: 45px;
+    position: relative;
+    padding: 2px 10px;
+    border-radius: 15px;
+    font-size: medium;
+    right: 20px;
+    margin: 0;
+    color: #2F7EB8;
+   left: 12px;
+    background: #00000014;
+}

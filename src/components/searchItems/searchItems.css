@@ -13,10 +13,12 @@
 
 #searchHeader{
     display: flex;
-    width: 80%;
+    width: 90%;
     justify-content: left;   
     align-items: center;
-    margin: auto;
+    margin: auto; 
+    position: fixed;
+    z-index: 2;   
 }
 #searchHeader h3{
     position: relative;
@@ -26,8 +28,13 @@
     border: none;
     height: 30px; 
     width: 70px;
-    border-radius: 20%;
+    border-radius:15px;
     font-weight: 500;
    background: #2F7EB8;
     font-size: large;
+    
+}
+#searchItemsContainer p {
+    width: 100%;
+    font-weight: 700;
 }

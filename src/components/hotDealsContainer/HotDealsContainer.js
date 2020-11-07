@@ -5,13 +5,13 @@ function HotDealsContainer({hotItems}) {
     const [index,setIndex]= useState(0)
    const  slideToRight = async()=>{
     let hotDeal = document.getElementById("hotDealsContainer")       
-     hotDeal.style.transform ="translateX(-"+(500*(index+1))+"px)";
+     hotDeal.style.transform ="translateX(-"+(700*(index+1))+"px)";
      setIndex(index+1)
     
    } 
    const  slideToLeft = ()=>{
     let hotDeal = document.getElementById("hotDealsContainer");      
-     hotDeal.style.transform ="translateX(-"+(500*(index-1))+"px)";
+     hotDeal.style.transform ="translateX(-"+(700*(index-1))+"px)";
      setIndex(index-1)    
    }
     return (

@@ -1,9 +1,9 @@
 import React from 'react'
 import "./ItemPageDetailes.css"
-const ItemPageDetailes = ({onchange,increaseQuantity,decreaseQuantity,quantity}) => {   
+const ItemPageDetailes = ({onchange,increaseQuantity,decreaseQuantity,quantity,divId}) => {   
     
     return (                   
-            <div id="itemPageDetails">
+            <div id="itemPageDetails" className={divId}>
                 <label>Size</label>
                 <select name="size" onChange={onchange}>
                     <option value="x-large">XL</option>

@@ -1,7 +1,7 @@
 import React from 'react';
 import "./searchItems.css";
 //import Card from "../searchCards/searchCards";
-import Card from "../homeItemsCard/HomeItemCard";
+import Card from "../homeItemsCard/HomeItemCard";   
 const SearchItems = ({items,searchText}) => {   
     console.log(items) 
     let back=()=>{

@@ -25,13 +25,14 @@
 }
 
 #loginButton{
-    background: blue;
+    background: #2F7EB8;
     width:100px;
     height: 40px;
     border-radius:5px; 
     margin: 15px;  
     border: none;
-    color: white;       
+    color: white;   
+    font-size: 16px;    
 }
 
 

@@ -5,7 +5,7 @@ import axios from "axios";
 import InfiniteScroll from 'react-infinite-scroller';
 let popularPage =0;
 let newPage =0;
-function Items({popular,sales,newItems,setPopularItems , setNewItems}) {
+function Items({popular,sales,newItems,setPopularItems , setNewItems,setSalesItems}) {
     const [showItem,setShowItem] = useState("popular");  
     let setShow=(e)=>{
         console.log(e.target.name) 
@@ -54,6 +54,26 @@ function Items({popular,sales,newItems,setPopularItems , setNewItems}) {
             setNewItems({...newItems,hasMore:false})
         }
     }
+    const loadMoreSales =async ()=>{
+        let token = localStorage.getItem("token");
+        let skip ;          
+        sales.items.length>0?
+         skip=popular.skip+15:
+         skip=0;      
+        let items =await axios.get(`https://sportstore1.herokuapp.com/api/v1/items?sortBy=salesTimes&skip=${skip}&limit=${15}`,{
+            headers:{
+                "x-access-token":token
+            }
+        })
+        console.log(items);
+        if(items.data.items.length>0){
+        let prevItems= sales.items; 
+        newPage++;       
+        setSalesItems({...sales,items:[...prevItems,...items.data.items],skip:skip});               
+        }else{
+            setSalesItems({...sales,hasMore:false})
+        }
+    }
     return (
         <div id="allItems">
             <h3>All Items</h3>
@@ -97,7 +117,20 @@ function Items({popular,sales,newItems,setPopularItems , setNewItems}) {
                                                     }   
                                                 </div>
                                             </InfiniteScroll>
-                    case "sale": return <div>sales</div>                        
+                    case "sale": return      <InfiniteScroll
+                                                pageStart={newPage}
+                                                loadMore={loadMoreSales}
+                                                hasMore={sales.hasMore}
+                                                loader={<div className="loader" key={0}>Loading ...</div>}
+                                            >
+                                                <div id="new">
+                                                    { sales.items?
+                                                        sales.items.map((item,index) => {           
+                                                        return <HomeItemCard item={item} key={index} />
+                                                        }):<div><h2>Loading...</h2></div>
+                                                    }   
+                                                </div>
+                                            </InfiniteScroll>
                     default : return    <InfiniteScroll
                                             pageStart={popularPage}
                                             loadMore={loadMorePopular}

@@ -6,14 +6,14 @@ function HotDealsCard({hotItem,index}) {
     //const [index,setIndex] = useState(0);
     let getCard = itemCard(hotItem.mainImage);
     let Card =styled(getCard)`
-    grid-template-areas: "top top icon"
-                        "leftButton middle rightButton"
-                        "team slider discount" ;
-                    
-    height: 340px;
-    width:500px; 
-    margin:0;    
-    color:whit;    
+        grid-template-areas: "top top icon"
+                            "leftButton middle rightButton"
+                            "team slider discount" ;
+                        
+        height: 500px;
+        width:700px; 
+        margin:0;    
+        color:whit;    
     `    
     console.log(hotItem)
     let onCardClick=()=>{

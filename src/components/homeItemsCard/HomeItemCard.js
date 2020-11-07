@@ -1,18 +1,28 @@
-import React from 'react';
+import React,{useState} from 'react';
 import "./homeItemCard.css";
 import style from "styled-components";
 import itemCard from "../ItemCard/ItemCard";
 import LikeComponent from "../likeComponent/likeComponent";
-function HomeItemCard({item}) {    
-    let getCard = itemCard(item.mainImage)
+import {Redirect} from "react-router-dom"
+function HomeItemCard({item}) {   
+    const [selectItem,setSelectItem]= useState(false)
+    let getCard = itemCard(item.mainImage);
     const Card = style(getCard)`
         grid-template-areas: "card card fav"
                             "card card ."
                             "team . price"
 ;
+    height:400px;
     `    
     let onCardClick=()=>{
-        window.location.href = `/item/${item._id}`;
+        //window.location.href = `/item/${item._id}`;
+        setSelectItem(true)
+    }
+    if(selectItem){
+        return <Redirect to={{
+            pathname:`/item/${item._id}`
+        }       
+        } />
     }
     return (
         <Card>

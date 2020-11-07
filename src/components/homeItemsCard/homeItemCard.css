@@ -37,17 +37,21 @@
 
 #team{
   grid-area: team;
-  
+  left: 8px;
+  justify-content: center;
+  bottom: 15px;
 }
 #team p{
   font-size: large;
   color: white;
   text-align: left;
-  width: 80%;
+  width: 100%;
  
 } 
 #price{
   grid-area: price;
+  align-self:center;
+  
 }
 #price h2{
   color: white;

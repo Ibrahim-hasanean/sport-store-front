@@ -6,6 +6,15 @@
     width: 95%;
     margin: auto;
 }
-
-
+#paymentSuccess{
+    color: white;
+    background-color: green;;
+    font-weight: 600;
+    padding: 15px;
+    border-radius: 15px;
+    transition: opacity 1s ease-in-out;
+    right: 50px;
+    top: 100px;
+    position: fixed;
+}
 

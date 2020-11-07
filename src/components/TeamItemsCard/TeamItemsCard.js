@@ -1,9 +1,11 @@
-import React from 'react';
+import React,{useState} from 'react';
 import getCard from "../ItemCard/ItemCard";
 import styled from "styled-components"
 import "./TeamItemsCard.css";
 import LikeComponent from "../likeComponent/likeComponent"
+import { Redirect } from 'react-router-dom';
 const TeamItemsCard = ({item}) => {
+    const [selectItem,setSelectItem] = useState(false)
     const card = getCard(item.mainImage);
     const Card= styled(card)`   
         height:350px;
@@ -13,7 +15,13 @@ const TeamItemsCard = ({item}) => {
                             "team . price";
     `
     let onCardClick=()=>{
-        window.location.href = `/item/${item._id}`;
+        setSelectItem(true)
+        // window.location.href = `/item/${item._id}`;
+    }
+    if(selectItem){
+        return <Redirect to={{
+            pathname: `/item/${item._id}`
+        }} />
     }
     return (
         <Card>

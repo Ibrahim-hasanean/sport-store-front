@@ -1,0 +1,15 @@
+#paymentMethod{
+    width: 100%;
+}
+#paymentMethod p{
+    color: #8E8E93;
+    font-size: medium; 
+      
+}
+#paymentMethod div{
+    display: flex;
+    justify-content: space-evenly;
+}
+.paymentMethod{
+    border: 1px solid #69ACDF;
+}

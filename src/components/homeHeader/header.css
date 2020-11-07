@@ -3,10 +3,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 95%;
+    width: max-content;
     margin: auto;
 }
-#header div{
+#searchContainer{
     display: flex;
     justify-content: center;
 }
@@ -34,4 +34,37 @@ p{
     border: none;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
+    position: relative;
+    top: 10px;
+    right: 15px;
+}
+#filter{
+     display: flex;
+    position: relative;     
+    align-items: center; 
+     opacity: 0;   
+    transition: opacity 2s ease-in-out;
+}
+#filter h3{
+    margin: 0;
+}
+#filterIconContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.filtericon{
+    background-color: black;    
+    width: 20px;
+    height: 3px;  
+    margin: 2px;  
+}
+.filtericon:first-child{
+    width: 30px;
+}
+
+.filtericon:last-child{
+    width: 15px;
 }

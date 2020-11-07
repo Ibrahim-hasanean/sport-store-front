@@ -33,7 +33,12 @@ let  Profile =  ()=> {
     }
     return (
         <div  id="profile">
-            <h1>welocome {userData.email}</h1>
+            <div id="userProfileName">
+                <div>
+                    <h2>{userData.name}</h2>
+                    <p>{userData.email}</p>
+                </div>                
+            </div>
         </div>
     )    
 }
