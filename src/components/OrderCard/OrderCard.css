@@ -1,0 +1,43 @@
+#orderCard{
+    width: 30%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    background: #00000014;
+    margin: 5px;
+    border-radius: 15px;
+    padding: 15px;
+}
+#orderCard p{
+    font-size: medium;
+    color: black;
+
+}
+#orderCard h3 , #orderCard p, .showItems{    
+    margin: 0;
+    text-align: left;
+}
+
+.showItems{
+    color: black;
+
+}
+
+@media only screen and (max-width:765px){   
+   
+    #orderCard{
+        width: 38%;
+    }
+}
+
+@media only screen and  (max-width: 1024px) and (min-width: 768px)  {
+    #orderCard{
+        width: 30%;
+    }
+    #orderCard h3{
+        font-size: 32px;
+    }
+    #orderCard p{
+        font-size: 28px;
+    }
+}

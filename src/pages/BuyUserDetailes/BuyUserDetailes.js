@@ -1,10 +1,8 @@
 import React,{useState} from 'react';
 import "./BuyUserDetailes.css";
-import PaymentContext from "../../context/PaymentContext";
 import axios from "axios";
 import { Redirect } from 'react-router-dom';
 const BuyUserDetailes = (props) => {
-    let {totalPrice,buyItems} = PaymentContext();
     const [userDetailes,setUserDetailes] = useState({});
     const [userDetailesId,setUserDetailesId] = useState(null);
     let inputChange=(e)=>{

@@ -1,0 +1,61 @@
+.cardItemPageContainer{
+    height:500px;
+     width:500px;
+     margin:0;
+     margin-top:30px;
+}
+
+.itemPageCardContainer{
+    height:500px;
+    width:400px;
+    position: relative;       
+    grid-area:card ;
+    overflow: hidden;
+}
+@media only screen and (max-width: 765px){
+    .itemPageCardContainer{
+        width: 90vw;
+    }
+    .cardItemPageContainer{
+        width: 90vw;        
+    }
+    .itemPageContainer{
+        flex-direction: column;
+        align-items: center;
+    }
+    .itemPageCard{
+        width: 90vw !important;    
+    }
+    #itemDetailesContainer{
+        width: 100%;
+    }
+    #itemPageDetails select {
+        width: 20%;
+
+    }
+    #itemPageDetails select option {
+        font-size: smaller;        
+    }
+}
+@media only screen and  (max-width: 1024px) and (min-width: 768px)  {
+    .cardItemPageContainer{
+        width: 80% !important;
+        grid-template-columns: 2.5% 97% 1%;
+        height: 700px;
+        margin: auto;
+    }
+    .itemPageRightButton{
+        right: 27px;
+    }
+    .itemPageCardContainer{
+        height: 700px;
+        width: 600px;
+        margin: auto
+    }
+    .cardItemPageContainer #leftButton{
+        left: 30px;;
+    }
+    .cardItemPageContainer #rightButton{
+        right: 22px
+    }
+}

@@ -4,7 +4,7 @@
     margin: auto;
     margin-top: 30px;
     display: grid;
-    grid-template-columns: 1fr 2fr 2fr 1fr;
+    grid-template-columns: 0.5fr 3fr 3fr 0.5fr;
     grid-template-rows: 1fr 2fr;
     grid-template-areas: ". teams viewAll ."
                           "leftSlid teamSlider teamSlider rightSlid"    
@@ -25,7 +25,7 @@
 #teamSlider{
     position: relative;
     height: 40px;    
-    width: 830px;
+    width: 100%px;
     grid-area: teamSlider;   
     align-self: center;
     display: flex;
@@ -51,8 +51,8 @@
     justify-self: right;
     padding: 5px;
     border: none;
-    position: relative;
-    right: 20px;
+    /* position: relative;
+    right: 20px; */
     z-index: 1;
 }
 
@@ -62,8 +62,37 @@
     justify-self: left;
     padding: 5px;
     border: none;
-    position: relative;
-    left: 20px;
+    /* position: relative;
+    left: 20px; */
     z-index: 1;
+}
+
+
+@media only screen and  (max-width: 1024px) and (min-width: 768px)  {
+    #teamSliderContainer h3{
+        font-size: 34px;
+        margin: 0;
+        font-weight: 700;
+    }
+    #teamSliderContainer p{
+        font-size: 34px;
+        margin: 0;
+    }
+    #leftSlid,#rightSlid{
+        width: 32px;
+        height: 44px;
+        font-size: 32px;
+        font-weight: 600;
+    }
+    #teamSlider{
+        height: 65px;
+    }
+    .teamImages{
+        width: 65px;
+        margin: 0px 15px;
+        height: 65px;
+    }
+
+
 }
 

@@ -19,6 +19,14 @@ function TeamsSlider({setSelectTeam}) {
         {image:"juventus.jpg",name:"Juventus"},
         {image:"liver.jpg",name:"Liver pool"},       
         {image:"bayern.jpg",name:"Bayern Munich"},       
+        {image:"atlatico.jpg",name:"Atletico Madrid"},
+        {image:"juventus.jpg",name:"Juventus"},
+        {image:"liver.jpg",name:"Liver pool"},       
+        {image:"bayern.jpg",name:"Bayern Munich"},       
+        {image:"atlatico.jpg",name:"Atletico Madrid"},
+        {image:"juventus.jpg",name:"Juventus"},
+        {image:"liver.jpg",name:"Liver pool"},       
+        {image:"bayern.jpg",name:"Bayern Munich"},       
     ]
     const toRight = ()=>{
         let slider = document.getElementById("teamsContainer");

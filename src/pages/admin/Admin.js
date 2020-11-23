@@ -1,4 +1,4 @@
-import React , {useState,useEffect} from 'react'
+import React , {useState,useEffect,useCallback} from 'react'
 import {Redirect} from "react-router-dom"
 import axios from 'axios'
 import "./admin.css"
@@ -11,32 +11,33 @@ function Admin() {
     const [isLoading,setIsLoading] = useState(true)
     const [mainFile,setMainFile] = useState(null);
     const [otherFiles,setOtherFiles] = useState([])
-    const [itemData,setItemData]= useState({})
+    const [itemData,setItemData]= useState({});
+    let checkIsAdmin = useCallback(
+        async()=>{  
+            try{
+                let result = await axios.get("https://sportstore1.herokuapp.com/api/v1/admin/isAdmin",{headers:{"x-access-token":isToken}});            
+                setIsLoading(true)
+                console.log(result)           
+                if(result.status === 200){
+                    setIsAdmin(true)
+                    setIsLoading(false)
+                }            
+            }catch(e){                   
+                console.log(e.response)
+                setIsLoading(false)
+                if(e.response.status === 401){
+                    setIsAdmin(false)
+                }
+            }
+           },
+        [isToken],
+    )
     useEffect(()=>{  
         let mount = true 
         if(mount)  
-        checkIsAdmin()
-        console.log(isToken)
+        checkIsAdmin()        
         return ()=> mount =false             
-    },[])
-    //https://sportstore1.herokuapp.com
-    let checkIsAdmin = async()=>{  
-        try{
-            let result = await axios.get("https://sportstore1.herokuapp.com/api/v1/admin/isAdmin",{headers:{"x-access-token":isToken}});            
-            setIsLoading(true)
-            console.log(result)           
-            if(result.status === 200){
-                setIsAdmin(true)
-                setIsLoading(false)
-            }            
-        }catch(e){                   
-            console.log(e.response)
-            setIsLoading(false)
-            if(e.response.status === 401){
-                setIsAdmin(false)
-            }
-        }
-       }
+    },[checkIsAdmin])    
        
       const addMain=async(e)=>{
         let  file = e.target.files[0];

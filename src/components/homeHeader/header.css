@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: max-content;
+    width: 100%;
     margin: auto;
 }
 #searchContainer{
@@ -67,4 +67,20 @@ p{
 
 .filtericon:last-child{
     width: 15px;
+}
+
+@media only screen and  (max-width: 1024px) and (min-width: 768px)  {
+    #header p{
+        font-size: 32px;
+    }
+    #searchContainer input{
+        width: 23rem;
+        height: 32px;
+        font-size: 32px;
+    }
+    #searchContainer button{
+       width: 63px;
+       height: 58px;
+    }
+
 }

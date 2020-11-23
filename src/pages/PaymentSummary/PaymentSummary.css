@@ -45,3 +45,25 @@
     text-align: center;
     font-weight: 600;
 }
+
+@media only screen and (max-width: 765px){
+    #summaryItemsContainer{
+        width: 100%;
+    }
+    #paymentResult{
+        width: 80%;
+    }
+}
+
+@media only screen and  (max-width: 1024px) and (min-width: 768px)  {
+    #summaryItemsContainer{
+        width: 80%;
+    }
+    #paymentResult{
+        width: 60%;
+    }
+    #paymentResult div,#paymentResult button,#summaryContainer h2{
+        font-size: 40px;
+    }
+}
+

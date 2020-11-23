@@ -24,4 +24,10 @@
     grid-area: card;
 }
 
+@media only screen and  (max-width: 1024px) and (min-width: 768px)  {
+    .teamCardItem p,#teamPrice,#teamCard{
+        font-size: 32px;
+    }
 
+
+}

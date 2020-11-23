@@ -47,3 +47,22 @@
     justify-content: center;
 
 }
+
+@media only screen and  (max-width: 1024px) and (min-width: 768px)  {
+    #itemBuyContainer button{
+        width: 40%;
+        height: 72px;
+    }
+    #fav{
+        width: 85%;
+        height: 100%;
+    }
+    .pageDetailesLabel,.itemDetailes select,.itemDetailes button{
+        font-size: 40px;
+    }  
+
+}
+/* 
+@media only screen and (width: 768px){   
+    
+} */

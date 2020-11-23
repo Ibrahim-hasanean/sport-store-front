@@ -7,7 +7,6 @@ const ItemPageBuy = ({item,quantity}) => {
     const [buyItem,setBuyItem] = useState(false) 
     const [isItemInCard,setIsItemInCard] = useState(false) 
     const {buyItems,setBuyItems} = PaymentContext();
-    console.log(quantity)
     let buyNow =  () =>{
         setBuyItem(true)
         setBuyItems([...buyItems,{...item,quantity,checked:true}])        

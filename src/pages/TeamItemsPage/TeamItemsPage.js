@@ -1,14 +1,11 @@
-import React,{useEffect,useState} from 'react';
+import React,{useEffect,useState,useCallback} from 'react';
 import "./TeamItemsPage.css";
 import axios from "axios";
 import Card from "../../components/TeamItemsCard/TeamItemsCard"
 const TeamItemsPage = (props) => {    
     const [teamItems,setTeamItems]= useState({home:[],away:[],third:[]})
-    const {team}= props.location.state;     
-    useEffect(()=>{
-        fetchTeamItems()
-    },[])
-    const fetchTeamItems = async()=>{
+    const {team}= props.location.state;  
+    const fetchTeamItems =useCallback(async()=>{
         let token = localStorage.getItem("token")       
         let teamItems = await axios.get(`https://sportstore1.herokuapp.com/api/v1/items?team=${team}`,{
                 headers:{
@@ -21,7 +18,14 @@ const TeamItemsPage = (props) => {
             let thirdKits = teamItems.data.items.filter(item=>item.type === "third");
             setTeamItems({home:[...homeKits],away:[...awayKits],third:[...thirdKits]})
                      
-    }
+    
+            },
+            [team],
+    )    
+    useEffect(()=>{
+        fetchTeamItems()
+    },[fetchTeamItems])
+    
     return (
         <div className="teamCardcontainer">
            <p>Home kit </p>

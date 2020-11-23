@@ -4,17 +4,19 @@ import "./hotDealsContainer.css"
 function HotDealsContainer({hotItems}) {    
     const [index,setIndex]= useState(0)
    const  slideToRight = async()=>{
-    let hotDeal = document.getElementById("hotDealsContainer")       
-     hotDeal.style.transform ="translateX(-"+(700*(index+1))+"px)";
+    let hotDeal = document.getElementById("hotDealsContainer")    
+    let shiftWidth = document.getElementById("hotDeals").offsetWidth;   
+     hotDeal.style.transform ="translateX(-"+(shiftWidth*(index+1))+"px)";
      setIndex(index+1)
     
    } 
    const  slideToLeft = ()=>{
-    let hotDeal = document.getElementById("hotDealsContainer");      
-     hotDeal.style.transform ="translateX(-"+(700*(index-1))+"px)";
+    let hotDeal = document.getElementById("hotDealsContainer"); 
+    let shiftWidth = document.getElementById("hotDeals").offsetWidth;     
+     hotDeal.style.transform ="translateX(-"+(shiftWidth*(index-1))+"px)";
      setIndex(index-1)    
    }
-    return (
+    return ( 
         <div id="container"> 
     
          {index===0?         

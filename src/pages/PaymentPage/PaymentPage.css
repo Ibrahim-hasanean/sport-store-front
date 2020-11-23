@@ -7,3 +7,10 @@
     margin: auto;
     align-items: flex-start;
 }
+
+@media only screen and (max-width: 765px){
+    #paymentPage{
+        width: 100%;
+    }
+}
+

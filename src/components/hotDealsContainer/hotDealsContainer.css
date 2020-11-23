@@ -67,3 +67,78 @@
 .sliderChildern{
     border:solid 0.1px black;
 }
+
+
+@media only screen and (max-width: 765px){
+   
+    #hotDeals,#container,.cardContainer{
+        width: 90vw;        
+    }
+    #container{
+        margin: 0;
+        margin-top: 15px;
+    }
+    #searchContainer{
+        width: 90%;
+    }
+    #searchContainer input{
+        font-size: large;
+
+    }   
+    #rightSlid{
+        justify-self: end;
+    }     
+
+}
+
+@media only screen and (max-width: 360px){
+   
+    #hotDeals,#container,.cardContainer{
+        width: 90vw;        
+    } 
+}
+
+@media only screen and (width: 768px){   
+   #container{
+       width:100%;
+       grid-template-columns:2.5% 97% 1%;;
+       height: 700px;
+   }
+   .cardContainer{
+        height:700px;
+   }
+   #leftButton,#rightButton{
+    width: 32px;
+    height: 40px;
+    font-size: 30px;
+   }
+   #leftButton{
+       left: 32px;
+   }
+   #rightButton{
+       right: 42px;
+   }
+}
+@media only screen and  (max-width: 1024px) and (min-width: 800px)  {
+
+    #container{
+        width:100%;
+        grid-template-columns:2.5% 97% 1%;;
+        height: 700px;
+    }
+    .cardContainer{
+        height:700px;
+        width: 950px;
+    }
+    #leftButton,#rightButton{
+     width: 32px;
+     height: 40px;
+     font-size: 30px;
+    }
+    #leftButton{
+        left: 32px;
+    }
+    #rightButton{
+        right: 26px;
+    }
+}

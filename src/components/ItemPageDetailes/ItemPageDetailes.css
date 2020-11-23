@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
 }
-#itemPageDetails{
+.itemDetailes{
     display: flex;
     justify-content: space-around;
     position: relative;
@@ -12,7 +12,7 @@
     font-size: larger;   
 }
 
-#itemPageDetails select{
+.itemDetailes select{
     width: 15%;
     border: none;
     background: #EFEFF4;
@@ -21,14 +21,14 @@
     font-weight: bold;
     padding: 5px;
 }
-#itemPageDetails select option{
+.itemDetailes select option{
     width: 15%;
     border: none;
     background: #EFEFF4;
     font-size: medium;
     font-weight: bold;
 }
-#itemPageDetails button{
+.itemDetailes button{
     border-radius: 50%;
     border: none;
     font-size: larger;
@@ -39,9 +39,7 @@
     padding: 5px;
 
 }
-#itemPageDetails{
+.itemDetailes{
     font-size: larger;
     font-weight: 500;
 };
-
-

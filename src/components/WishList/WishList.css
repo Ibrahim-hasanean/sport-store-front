@@ -1,0 +1,41 @@
+#wishListContainer{  
+    width: 60%;
+    position: relative;
+    top: 80px;
+    display: flex;
+    flex-direction: column;
+}
+#wishList{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    position: relative;    
+}
+#wishListContainer h3{
+    position: relative;
+    right: 50px;
+}
+
+@media only screen and (max-width:765px){
+    #wishListContainer{
+        width: 100%;
+    }
+    #wishListContainer h3{
+        right:0
+    }
+}
+
+@media only screen and  (max-width: 1024px) and (min-width: 768px)  {
+    #wishListContainer{
+        width: 100%;
+    }
+    #wishList {
+        justify-content: center;
+
+    }
+    #wishListContainer h3{
+        right:0;
+        font-size: 32px;
+
+    }
+}

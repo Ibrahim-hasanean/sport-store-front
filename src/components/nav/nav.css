@@ -35,5 +35,16 @@
     font-size: 16px;    
 }
 
+@media only screen and (max-width:480px){
+    #nav ul li a,#loginButton a{
+        font-size: x-large;
+    }
+}
+
+@media only screen and  (max-width: 1024px) and (min-width: 768px)  {
+    #nav ul li a,#loginButton a,#loginButton{
+        font-size: 34px;
+    } 
+}
 
 

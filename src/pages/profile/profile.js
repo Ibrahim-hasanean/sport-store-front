@@ -1,45 +1,64 @@
-import React , {useEffect,useState} from 'react'
+import React , {useEffect,useState,useCallback} from 'react'
 import useContext from "../../context/AuthContext";
 import "./profile.css"
 import axios from "axios";
+import WishList from "../../components/WishList/WishList";
+import OrdersList from "../../components/orders/Orders";
+import ProfileSideBar from "../../components/ProfileSideBar/ProfileSideBar";
+import {AiOutlineBars} from "react-icons/ai"
 let  Profile =  ()=> {
     let {logout,userData,setUserData} = useContext()  
     const [isLoading,setIsLoading] = useState(false)   
-    
-    useEffect(()=>{  
-        let getUseData = ()=>{
-            let token = localStorage.getItem("token")
-             axios.get("https://sportstore1.herokuapp.com/api/v1/users/profile",{headers:{"x-access-token":token}})
-            .then(response => {
-                let {email,name} = response.data;
-                setUserData({...userData,name ,email})
-                setIsLoading(true)
-            }).catch(e=>{
-                console.log(e)
-                if(e.response.status === 401){
-                    logout()                   
-                }
-            })     
-        }      
+    const [showItems,setShowItems] = useState("wishList")
+    const getUseData = useCallback(()=>{
+        let token = localStorage.getItem("token")
+        axios.get("https://sportstore1.herokuapp.com/api/v1/users/profile",{headers:{"x-access-token":token}})
+        .then(response => {
+            let {email,name} = response.data;
+            setUserData({...userData,name ,email})
+            setIsLoading(true)
+        }).catch(e=>{
+            console.log(e)
+            if(e.response.status === 401){
+                logout()                   
+            }
+        })     
+    } ,
+    [logout,setUserData,userData],
+)
+    useEffect(()=>{        
     if(Object.keys(userData).length===0){
         getUseData()
     }else{
         setIsLoading(true)
     }    
-})  
+    },[getUseData,userData])  
+        
+    
+    const showSideBar = ()=>{
+        let sideBar  = document.getElementById("profile");
+        console.log(sideBar.style.left)
+        if(sideBar.style.left=== "0px"){
+            sideBar.style.left='-1000px';
+        }else{          
+            sideBar.style.left=0;
+        }
+    }
 
     if(!isLoading){
      return   <div id="profile">...Loading</div>
     }
     return (
-        <div  id="profile">
-            <div id="userProfileName">
-                <div>
-                    <h2>{userData.name}</h2>
-                    <p>{userData.email}</p>
-                </div>                
+        <div id="profileContainer">
+            <div className="sideBar" onClick={showSideBar}>
+                <AiOutlineBars height="1fr" width="1fr"/>
             </div>
-        </div>
+            <ProfileSideBar showItems={showItems} setShowItems={setShowItems}/>
+           { showItems === "wishList"?
+            <WishList showItems={showItems}  />:
+            <OrdersList />
+            }  
+         </div>
     )    
 }
 export default Profile

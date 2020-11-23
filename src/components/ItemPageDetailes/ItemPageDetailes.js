@@ -1,19 +1,19 @@
 import React from 'react'
 import "./ItemPageDetailes.css"
-const ItemPageDetailes = ({onchange,increaseQuantity,decreaseQuantity,quantity,divId}) => {   
+const ItemPageDetailes = ({onchange,increaseQuantity,decreaseQuantity,quantity}) => {   
     
     return (                   
-            <div id="itemPageDetails" className={divId}>
-                <label>Size</label>
+            <div  className="itemDetailes">
+                <label className="pageDetailesLabel">Size</label>
                 <select name="size" onChange={onchange}>
                     <option value="x-large">XL</option>
                     <option value="xx-large">XXL</option>
                     <option value="large">L</option>
                     <option value="medium">M</option>
                 </select>
-                <label>Quantity</label>
+                <label className="pageDetailesLabel">Quantity</label>
                 <button name="quantity" onClick={increaseQuantity} >+</button>
-                <label id="quantity" onChange={onchange}>{quantity}</label>                        
+                <label className="pageDetailesLabel" id="quantity" onChange={onchange}>{quantity}</label>                        
                 <button onClick={decreaseQuantity} name="quantity">-</button>
             </div>          
        

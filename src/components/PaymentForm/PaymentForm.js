@@ -10,7 +10,6 @@ const PaymentForm = ({userDetailesId}) => {
     const [confirmPayment,setConfirmPayment] = useState(false)
     const elements = useElements();
     const stripe = useStripe()
-    console.log(buyItems)
     let handleSubmit = async event => {
         event.preventDefault();    
         //const { stripe, elements } = props;
@@ -31,9 +30,11 @@ const PaymentForm = ({userDetailesId}) => {
         type:"card",
         card
       })
-      const confirmCardPayment = await stripe.confirmCardPayment(response.data.clientSecret,{
+       await stripe.confirmCardPayment(response.data.clientSecret,{
         payment_method:paymentMethod.paymentMethod.id
       })
+      setBuyItems([]);
+      setPaymentSuccess(true)
       setConfirmPayment(true)
         } catch (e) {
           console.log(e)
@@ -48,8 +49,7 @@ const PaymentForm = ({userDetailesId}) => {
     }
 
     if(confirmPayment){
-      setBuyItems([]);
-      setPaymentSuccess(true)
+      
       return <Redirect to={{
         pathname : '/'
        }} />
@@ -72,12 +72,4 @@ const PaymentForm = ({userDetailesId}) => {
 }
 
 export default  PaymentForm;
-// export default function  InjectedCheckoutForm() {
-//     return (
-//       <ElementsConsumer>
-//         {({ stripe, elements }) => (
-//           <PaymentForm stripe={stripe} elements={elements} />
-//         )}
-//       </ElementsConsumer>
-//     );
-//   }
+

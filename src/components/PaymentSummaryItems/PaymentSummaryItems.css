@@ -3,7 +3,7 @@
     height: 150px;
     display: grid;
     grid-template-columns: 2fr 3fr 1fr ;
-    grid-template-rows: 2fr 1fr ;
+    grid-template-rows: 1fr 1fr ;
     grid-template-areas: "image team check"                       
                         "image buydetails price";
     
@@ -13,13 +13,15 @@
 }
 .summaryItemImg{
     grid-area:image; 
+    height: 100%;
 }
 .summaryItem img{
     width: 100%;
-    height: 150px;
+    height: 100%;
 }
 .summaryItemPrice{
     grid-area:price ;
+    align-self: center;
 }
 .summaryItemPrice p{
     width: 90%;
@@ -61,4 +63,32 @@
     position: relative;
     top: 30%;
     background-color: white;
+}
+
+@media only screen and (max-width: 765px){
+    
+    .summaryItem{
+        width: 100%;
+        height: 180px;
+        grid-template-columns: 4fr 2fr 1fr ;
+    }
+    .summaryItemTeam h3 ,.summaryItemTeam p,.summaryItemPrice p, .summaryItemDetailes p{
+        font-size: large;
+        font-weight: 700;
+    }
+}
+
+
+@media only screen and  (max-width: 1024px) and (min-width: 768px)  {
+    .summaryItem{
+        width: 100%;
+        height: 260px;
+        grid-template-columns: 2fr 3fr 0.5fr ;
+    }
+    .summaryItemTeam h3 ,.summaryItemTeam p,.summaryItemPrice p, .summaryItemDetailes p{
+        font-size: 36px;
+        font-weight: 700;
+    }
+
+
 }

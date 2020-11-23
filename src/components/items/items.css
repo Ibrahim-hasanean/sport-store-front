@@ -50,3 +50,43 @@
     margin: auto;
     margin-top: 3px;
 }
+
+
+@media only screen and (max-width: 765px){
+    #allItems{
+        width: 100%;
+    }
+    #itemsList{
+        width:100%;
+    }     
+
+    #itemsContainer{
+        width:100%;
+    }
+    #popular{
+        flex-direction: column;
+    }
+    #popular div, #new div{
+        width: 90%;
+    }
+}
+
+
+/*@media only screen and (width: 768px){ */  
+    @media only screen and  (max-width: 1024px) and (min-width: 768px)  {
+
+   #allItems h3{
+       font-size: 33px;
+       font-weight: 700;
+   }
+   #itemsList{
+       justify-content: space-between;
+   }
+   #itemsList button{
+       font-size: 30px;
+   }
+   #itemsContainer{
+       width: 100%;
+   }
+   
+}

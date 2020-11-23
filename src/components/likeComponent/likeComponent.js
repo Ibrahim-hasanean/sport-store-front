@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from "axios";
-import "./likeComponent.css"
+import "./likeComponent.css";
+import {AiFillHeart,AiOutlineHeart} from "react-icons/ai";
 const LikeComponent = ({item}) => {   
     let addFav= async (e)=>{       
         let token = localStorage.getItem("token")
@@ -36,19 +37,10 @@ const LikeComponent = ({item}) => {
     }
      
         if(item.fav)
-        return <div id="fav" className="addFav">
-                    <div onClick={addFav} className="fav1" >
-                    </div>
-                    <div  onClick={addFav} className="fav2">
-                    </div>
-                </div>            
-           if(!item.fav) 
-        return <div id="fav">
-                    <div onClick={addFav} className="fav1" >
-                    </div>
-                    <div  onClick={addFav} className="fav2">
-                    </div>
-                </div>
+        return <AiFillHeart size="1em" id="fav" className="addFav" onClick={addFav} />                
+        if(!item.fav) 
+        return <AiOutlineHeart id="fav" onClick={addFav} />
+      
 }
     
 

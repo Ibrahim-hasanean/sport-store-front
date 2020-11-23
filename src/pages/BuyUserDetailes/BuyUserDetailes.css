@@ -69,3 +69,30 @@ div input{
     background-color:#2F7EB8 ;    
 
 }
+
+@media only screen and (max-width: 765px){
+    .userDetailesContainer{
+        width: 100%;
+    }
+    .userDetailes,.submitUserDetailes{
+        width: 80%;
+    }
+}
+
+@media only screen and  (max-width: 1024px) and (min-width: 768px)  {
+    .userDetailesContainer{
+        width: 100%;
+        top: 200px;
+    }
+    .userDetailes,.submitUserDetailes{
+        width: 60%;
+    }
+
+    .userDetailes label,.userDetailes input,.stateCity div label,.submitUserDetailes button,.userDetailesContainer div h2{
+        font-size: 34px;
+    }
+
+    .userDetailes input{
+        height: 60px;
+    }
+}

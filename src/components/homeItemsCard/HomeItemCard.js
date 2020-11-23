@@ -1,21 +1,11 @@
 import React,{useState} from 'react';
 import "./homeItemCard.css";
-import style from "styled-components";
-import itemCard from "../ItemCard/ItemCard";
 import LikeComponent from "../likeComponent/likeComponent";
+import Card from "../../styled-component/HomeItemCard";
 import {Redirect} from "react-router-dom"
-function HomeItemCard({item}) {   
-    const [selectItem,setSelectItem]= useState(false)
-    let getCard = itemCard(item.mainImage);
-    const Card = style(getCard)`
-        grid-template-areas: "card card fav"
-                            "card card ."
-                            "team . price"
-;
-    height:400px;
-    `    
+function HomeItemCard({item,width,className}) {   
+    const [selectItem,setSelectItem]= useState(false);
     let onCardClick=()=>{
-        //window.location.href = `/item/${item._id}`;
         setSelectItem(true)
     }
     if(selectItem){
@@ -25,8 +15,8 @@ function HomeItemCard({item}) {
         } />
     }
     return (
-        <Card>
-        <LikeComponent item={item}/>           
+        <Card imageURL={item.mainImage} width={width} className={className}>
+            <LikeComponent item={item}/>           
             <div id="card" onClick={onCardClick}></div>
                 <div id="team">
                 <p>{item.team}</p>

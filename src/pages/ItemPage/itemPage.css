@@ -32,3 +32,33 @@
     font-size: large;
     
 }
+
+
+@media only screen and (max-width: 765px){   
+    #itemPageContainer{
+        flex-direction: column;
+    }   
+    .itemPageDetailes p, #itemPageDetails label,#naming button,#itemBuyContainer button{
+        font-size: large;
+        font-weight: 700;
+    }    
+}
+
+
+@media only screen and  (max-width: 1024px) and (min-width: 768px)  {
+    #itemPageContainer{
+        flex-direction: column;
+        width: 100%;
+    }      
+   
+    #itemDetailesContainer h2,.itemPageDetailes p,#itemPageDetailes label,#namingContainer label,#naming button,#itemBuyContainer button {
+        font-size: 40px;
+    } 
+   
+    #itemDetailesContainer{
+       width: 90%;
+        margin: auto;
+        height: 100%;
+    }
+    
+}

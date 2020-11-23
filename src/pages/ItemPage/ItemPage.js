@@ -10,26 +10,28 @@ const ItemPage= (props)=> {
     const [loading,setIsLoading] = useState(true)    
     const [itemData,setItemData]= useState({quantity:1});
     const[item,setItem] = useState();
+    let id = props.match.params.id;
+
     useEffect(()=>{
-        getItem()
-    },[])      
-    const getItem = async()=>{
-        let id = props.match.params.id;
-        let token = localStorage.getItem("token")        
-        try{
-        let item= await axios.get(`https://sportstore1.herokuapp.com/api/v1/items/${id}`,{headers:{
-            "x-access-token":token
-        }})  
-        setItem(item.data.item)   
-        const imagesURL =  item.data.item.imagesURL.map(image=> image.imageURL)
-        const array = [item.data.item.mainImage,...imagesURL]  
-        setImages([...array])
-        setIsLoading(false)        
-        }catch(e){
-            console.log(e.response)
+        const getItem = async()=>{
+            let token = localStorage.getItem("token")        
+            try{
+            let item= await axios.get(`https://sportstore1.herokuapp.com/api/v1/items/${id}`,{headers:{
+                "x-access-token":token
+            }})  
+            setItem(item.data.item)   
+            const imagesURL =  item.data.item.imagesURL.map(image=> image.imageURL)
+            const array = [item.data.item.mainImage,...imagesURL]  
+            setImages([...array])
+            setIsLoading(false)        
+            }catch(e){
+                console.log(e.response)
+            }
         }
-    }
-  
+      
+        getItem()
+    },[id])      
+   
    const handleChange = (e)=>{
        let name = e.target.name;
        let value = e.target.value

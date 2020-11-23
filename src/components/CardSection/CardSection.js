@@ -1,5 +1,5 @@
 import React from 'react'
-import {CardElement,CardNumberElement,CardCvcElement,CardExpiryElement} from "@stripe/react-stripe-js";
+import {CardElement} from "@stripe/react-stripe-js";
 import "./cardSection.css";
 const CardSection = () => {
     let CARD_SECTION_OPTION = {
@@ -14,8 +14,14 @@ const CardSection = () => {
             fontSmoothing: "antialiased",
             "::placeholder": {
               color: "#CFD7DF"
-            }
-          },
+            },
+            "@media only screen and (width:768px)":{
+              fontSize: "25%",
+              width:"80%"
+            },
+            
+
+          },        
           invalid: {
             color: "#e5424d",
             ":focus": {

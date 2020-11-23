@@ -1,30 +1,27 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState,useEffect,useCallback} from 'react';
 import "./PaymentSummary.css";
 import SummaryItem from "../../components/PaymentSummaryItems/PaymentSummaryItems"
 import { Redirect } from 'react-router-dom';
 import PaymentContext from "../../context/PaymentContext";
-const PaymentSummary = (props) => {    
-    // const [items,setItems] = useState(props.location.state.items);   
-    //const [totalPrice,setTotalPrice] = useState(0);
+const PaymentSummary = (props) => {
     const [buy,setBuy] = useState(false);
-    //const [buyItems,setBuyItems] = useState(null)
     let {totalPrice,setTotalPrice,buyItems,setBuyItems} = PaymentContext();
-    useEffect(()=>{
-        getTotalPrice(buyItems)
-    },[totalPrice,buyItems]);
-    const getTotalPrice =async (items)=>{
+    const getTotalPrice =useCallback(async (items)=>{
         let result= 0;
-        console.log(totalPrice)
-        for(let i = 0; i< items.length;i++){
-            //(items[i].price * items[i].quantity)
+            for(let i = 0; i< items.length;i++){           
             console.log(items[i].price)
             if(!items[i].checked) continue;
             result = result +  (items[i].price * items[i].quantity)  
         }
         setTotalPrice(result)
-        console.log(totalPrice)
-    }
-
+        }
+,
+    [setTotalPrice],
+) 
+    useEffect(()=>{
+        getTotalPrice(buyItems)
+    },[getTotalPrice,buyItems]);
+    
    const buyNow=()=>{
     const items = buyItems.filter(x=>x.checked);
     setBuyItems(items)
