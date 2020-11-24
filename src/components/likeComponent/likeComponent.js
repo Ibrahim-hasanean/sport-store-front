@@ -28,13 +28,14 @@ const LikeComponent = ({item}) => {
 
             //fav.setAttribute("class", "removeFav");
             try{
+                item.fav=false
                 let setFav = await axios.delete(`https://sportstore1.herokuapp.com/api/v1/favorite/${item._id}`,{
                     headers:{
                         "x-access-token":token
                     }
                 })
                 console.log(setFav)
-                item.fav=false
+               
              }catch(e){
                  console.log(e.response)
              }
