@@ -6,6 +6,7 @@ import useAuthContext from "../../context/AuthContext"
 import "../login/login.css";
 
 function Admin() {
+    let url = process.env.REACT_APP_BACKEND_URL;
     const [isAdmin,setIsAdmin] = useState(true)
     let {isToken} = useAuthContext()    
     const [isLoading,setIsLoading] = useState(true)
@@ -15,7 +16,7 @@ function Admin() {
     let checkIsAdmin = useCallback(
         async()=>{  
             try{
-                let result = await axios.get("https://sportstore1.herokuapp.com/api/v1/admin/isAdmin",{headers:{"x-access-token":isToken}});            
+                let result = await axios.get(`${url}/api/v1/admin/isAdmin`,{headers:{"x-access-token":isToken}});            
                 setIsLoading(true)
                 console.log(result)           
                 if(result.status === 200){
@@ -76,7 +77,7 @@ function Admin() {
       
        //https://sportstore1.herokuapp.com
        try{
-        let request = await axios.post("https://sportstore1.herokuapp.com/api/v1/admin/items",data,{headers:{
+        let request = await axios.post(`${url}/api/v1/admin/items`,data,{headers:{
            "x-access-token":isToken , 
            'Content-Type': 'multipart/form-data'         
         }})

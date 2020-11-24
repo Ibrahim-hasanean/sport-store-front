@@ -4,6 +4,8 @@ import "./WishList.css";
 // import Card from "../homeItemsCard/HomeItemCard"
 import Card from "../ProfileWishItemsCard/ProfileWishItemsCard"
 const WishList = ({items}) => {
+    let url = process.env.REACT_APP_BACKEND_URL; 
+
     const [wishList,setWishList] = useState([])
     const [isLoading,setIsLoading] = useState(true);
     useEffect(()=>{
@@ -12,7 +14,7 @@ const WishList = ({items}) => {
     const getWishList = async ()=>{
         let token = localStorage.getItem("token"); 
         try {
-            let result =  await axios.get("https://sportstore1.herokuapp.com/api/v1/items?wishList=true",{
+            let result =  await axios.get(`${url}/api/v1/items?wishList=true`,{
                 headers:{
                     "x-access-token":token
                 }

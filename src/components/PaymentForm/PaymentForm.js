@@ -6,6 +6,8 @@ import "./paymentForm.css";
 import axios from "axios";
 import { Redirect } from 'react-router-dom';
 const PaymentForm = ({userDetailesId}) => {
+  let url = process.env.REACT_APP_BACKEND_URL; 
+
     let {totalPrice,buyItems,setBuyItems,setPaymentSuccess} = PaymentContext();
     const [confirmPayment,setConfirmPayment] = useState(false)
     const elements = useElements();
@@ -19,7 +21,7 @@ const PaymentForm = ({userDetailesId}) => {
         
       try{
         let token = localStorage.getItem("token")
-        const response= await axios.post("https://sportstore1.herokuapp.com/api/v1/payments",{
+        const response= await axios.post(`${url}/api/v1/payments`,{
           items:buyItems,userDetailesId,amount:totalPrice
         },{headers:{
           "x-access-token":token

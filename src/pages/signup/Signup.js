@@ -5,6 +5,8 @@ import useAuthContext from "../../context/AuthContext"
 import { Redirect } from 'react-router-dom'
 import useAuth from "../useAuth/useAuth"
 const Signup = () => {
+    let url = process.env.REACT_APP_BACKEND_URL; 
+
     let {setToken,setUserData,userData} = useAuthContext()    
     let {email,password,validEmail,validPassword 
         ,errors,setErrors,validateEmail,validatePassword,
@@ -16,7 +18,7 @@ const Signup = () => {
         console.log(email,password)
          e.preventDefault();  
          if(validEmail && validPassword && name  ){       
-             axios.post("https://sportstore1.herokuapp.com/api/v1/signup",{            
+             axios.post(`${url}/api/v1/signup`,{            
              email,password,name
          },
          ).then(async response=>{
@@ -61,10 +63,12 @@ const Signup = () => {
             {<p className="error">{errors.password}</p>}
             <input  id="submit" type="submit" value="signup"/>   
   
-);          
+        
         </form> 
         </div>
     )
+
+
 }
 
 export default Signup

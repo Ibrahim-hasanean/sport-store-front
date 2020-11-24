@@ -4,6 +4,7 @@ import axios from "axios"
 import {Redirect} from "react-router-dom"
 import useAuth from "../useAuth/useAuth";
 function NewPassword(props) {
+    let url = process.env.REACT_APP_BACKEND_URL; 
     let {state} = props.location    
     const [resetpassword,setResetPassword] = useState(false)
     let {password,validPassword ,errors,setErrors,validatePassword } =useAuth()
@@ -13,7 +14,7 @@ function NewPassword(props) {
             if(!validPassword){
                 setErrors({...errors,password:"must be 8 charchters"})
             }else{
-                axios.post("https://sportstore1.herokuapp.com/api/v1/newpassword",{password,email:state.email})
+                axios.post(`${url}/api/v1/newpassword`,{password,email:state.email})
                 .then(response=>{
                     console.log(response)
                     if(response.status===200){

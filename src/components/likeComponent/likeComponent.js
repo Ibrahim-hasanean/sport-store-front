@@ -3,6 +3,8 @@ import axios from "axios";
 import "./likeComponent.css";
 import {AiFillHeart,AiOutlineHeart} from "react-icons/ai";
 const LikeComponent = ({item}) => {   
+    let url = process.env.REACT_APP_BACKEND_URL; 
+
     const [isFav,setIsFav] = useState(item.fav)
     let addFav= async (e)=>{       
         let token = localStorage.getItem("token")
@@ -12,7 +14,7 @@ const LikeComponent = ({item}) => {
            item.fav=true
            setIsFav(true)
             try{
-            let setFav = await axios.post("https://sportstore1.herokuapp.com/api/v1/favorite",{itemId:item._id},{
+            let setFav = await axios.post(`${url}/api/v1/favorite`,{itemId:item._id},{
                 headers:{
                     "x-access-token":token
                 }
@@ -29,7 +31,7 @@ const LikeComponent = ({item}) => {
             //fav.setAttribute("class", "removeFav");
             try{
                 item.fav=false
-                let setFav = await axios.delete(`https://sportstore1.herokuapp.com/api/v1/favorite/${item._id}`,{
+                let setFav = await axios.delete(`${url}/api/v1/favorite/${item._id}`,{
                     headers:{
                         "x-access-token":token
                     }

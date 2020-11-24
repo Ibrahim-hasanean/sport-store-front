@@ -3,7 +3,8 @@ import "../login/login.css"
 import axios from "axios"
 import { Redirect } from 'react-router-dom';
 const ConfirmCode = (props) => {
-    let {state} = props.location
+    let url = process.env.REACT_APP_BACKEND_URL
+    let {state} = props.location;
     const [code ,setCode] = useState(null)
     const [errors,setErrors] = useState({})
     const [isconfirm,setIsConfirm]= useState(false)    
@@ -12,7 +13,7 @@ const ConfirmCode = (props) => {
         if(!code){
             setErrors({...errors,code:"code is required"})
         }else{
-        axios.post("https://sportstore1.herokuapp.com/api/v1/confirmcode",{code,email:state.email})        
+        axios.post(`${url}/api/v1/confirmcode`,{code,email:state.email})        
         .then(response=>{
             console.log(response.data)
             if(response.data.status===200)

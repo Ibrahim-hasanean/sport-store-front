@@ -8,7 +8,8 @@ import FacebookLogin from "react-facebook-login"
 import GoogleLogin from 'react-google-login';
 import config from "../../config.json"
 let Login= (props) => {  
-        let {setToken,isToken,setUserData,userData} = useAuthContext()    
+    let url = process.env.REACT_APP_BACKEND_URL; 
+    let {setToken,isToken,setUserData,userData} = useAuthContext()    
     let {email,password,validEmail,validPassword 
         ,errors,setErrors,validateEmail,validatePassword,
         setValidPassword,setValidEmail }  = useAuth()
@@ -21,12 +22,11 @@ let Login= (props) => {
         }   
      })
 
-//https://sportstore1.herokuapp.com
        let submit=async (e)=>{ 
            console.log(email,password)
             e.preventDefault();  
             if(validEmail && validPassword ){       
-                axios.post("https://sportstore1.herokuapp.com/api/v1/login",{            
+                axios.post(`${url}/api/v1/login`,{            
                 email,password
             },
             ).then(async response=>{
@@ -54,7 +54,7 @@ let Login= (props) => {
     let facebbokRespose = async(response)=>{
         console.log(response)
         try{
-        let sendToken = await axios.post("https://sportstore1.herokuapp.com/api/v1/facebooklogin",{accessToken:response.accessToken});
+        let sendToken = await axios.post(`${url}/api/v1/facebooklogin`,{accessToken:response.accessToken});
             let {token,status,email,name,isAdmin} = sendToken.data;
             console.log(sendToken.data)
             if(status === 200){
@@ -70,10 +70,9 @@ let Login= (props) => {
 
     }
     let responseGoogle = async(response)=>{
-        console.log(response)
-        
+        console.log(response)        
         try{
-        let sendToken = await axios.post("https://sportstore1.herokuapp.com/api/v1/googlelogin",{id_token:response.tokenId});
+        let sendToken = await axios.post(`${url}/api/v1/googlelogin`,{id_token:response.tokenId});
             let {token,status,email,name} = sendToken.data;
             if(status === 200){
                 console.log(token)
@@ -81,10 +80,7 @@ let Login= (props) => {
                 setUserData({email,name})
         }            
     }catch(e){
-        console.log(e)
-        // if(e.response.status === 409){
-        //     setErrors({...errors,email:"email already signed up localy"})
-        //  }
+        console.log(e)        
         }
     }
     if(isToken){           
@@ -104,7 +100,7 @@ let Login= (props) => {
             <div className="socialLoginContainer">
             
             <FacebookLogin
-                appId={config.Facebook_AppId}
+                appId={process.env.REACT_APP_Facebook_AppId}
                 autoLoad={false}
                 fields="name,email,picture"               
                 callback={facebbokRespose}
@@ -113,7 +109,7 @@ let Login= (props) => {
                 icon="fa-facebook"                                             
                  />               
                  <GoogleLogin
-                    clientId={config.Google_ClitenID}
+                    clientId={process.env.REACT_APP_Google_ClitenID}
                     buttonText="Login with google"
                     onSuccess={responseGoogle}
                     onFailure={responseGoogle}

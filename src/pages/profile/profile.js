@@ -7,12 +7,14 @@ import OrdersList from "../../components/orders/Orders";
 import ProfileSideBar from "../../components/ProfileSideBar/ProfileSideBar";
 import {AiOutlineBars} from "react-icons/ai"
 let  Profile =  ()=> {
+    let url = process.env.REACT_APP_BACKEND_URL; 
+
     let {logout,userData,setUserData} = useContext()  
     const [isLoading,setIsLoading] = useState(false)   
     const [showItems,setShowItems] = useState("wishList")
     const getUseData = useCallback(()=>{
         let token = localStorage.getItem("token")
-        axios.get("https://sportstore1.herokuapp.com/api/v1/users/profile",{headers:{"x-access-token":token}})
+        axios.get(`${url}/api/v1/users/profile`,{headers:{"x-access-token":token}})
         .then(response => {
             let {email,name} = response.data;
             setUserData({...userData,name ,email})

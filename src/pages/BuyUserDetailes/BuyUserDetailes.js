@@ -3,6 +3,7 @@ import "./BuyUserDetailes.css";
 import axios from "axios";
 import { Redirect } from 'react-router-dom';
 const BuyUserDetailes = (props) => {
+    let url = process.env.REACT_APP_BACKEND_URL;
     const [userDetailes,setUserDetailes] = useState({});
     const [userDetailesId,setUserDetailesId] = useState(null);
     let inputChange=(e)=>{
@@ -14,7 +15,7 @@ const BuyUserDetailes = (props) => {
         console.log(userDetailes)
         try {
             let token = localStorage.getItem("token");
-            const sendUserDetailes = await axios.post("https://sportstore1.herokuapp.com/api/v1/payments/userDetailes",userDetailes,{
+            const sendUserDetailes = await axios.post(`${url}/api/v1/payments/userDetailes`,userDetailes,{
                 headers:{
                     "x-access-token": token
                 }

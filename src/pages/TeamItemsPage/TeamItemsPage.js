@@ -3,11 +3,13 @@ import "./TeamItemsPage.css";
 import axios from "axios";
 import Card from "../../components/TeamItemsCard/TeamItemsCard"
 const TeamItemsPage = (props) => {    
+    let url = process.env.REACT_APP_BACKEND_URL; 
+
     const [teamItems,setTeamItems]= useState({home:[],away:[],third:[]})
     const {team}= props.location.state;  
     const fetchTeamItems =useCallback(async()=>{
         let token = localStorage.getItem("token")       
-        let teamItems = await axios.get(`https://sportstore1.herokuapp.com/api/v1/items?team=${team}`,{
+        let teamItems = await axios.get(`${url}/api/v1/items?team=${team}`,{
                 headers:{
                     "x-access-token":token
                 }

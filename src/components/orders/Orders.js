@@ -3,6 +3,8 @@ import "./orders.css";
 import OrderCard from "../OrderCard/OrderCard";
 import axios from "axios";
 const Orders = () => {
+    let url = process.env.REACT_APP_BACKEND_URL; 
+
     const [orders,setOrders] = useState([]);
     const [isLoading,setIsLoading] = useState(true)
     useEffect(()=>{
@@ -11,7 +13,7 @@ const Orders = () => {
     const getOrders = async ()=>{
         let token = localStorage.getItem("token")
         try {
-            const getOrders = await axios.get("https://sportstore1.herokuapp.com/api/v1/items?orders=true",{
+            const getOrders = await axios.get(`${url}/api/v1/items?orders=true`,{
                 headers:{
                     "x-access-token":token
                 }

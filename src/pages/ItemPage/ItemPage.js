@@ -6,6 +6,7 @@ import axios from "axios";
 import ItemPageNaming from "../../components/ItemPageNaming/ItemPageNaming";
 import ItemPageBuy from "../../components/ItemPageBuy/ItemPageBuy";
 const ItemPage= (props)=> {
+    let url = process.env.REACT_APP_BACKEND_URL; 
     const[images,setImages] = useState();     
     const [loading,setIsLoading] = useState(true)    
     const [itemData,setItemData]= useState({quantity:1});
@@ -16,7 +17,7 @@ const ItemPage= (props)=> {
         const getItem = async()=>{
             let token = localStorage.getItem("token")        
             try{
-            let item= await axios.get(`https://sportstore1.herokuapp.com/api/v1/items/${id}`,{headers:{
+            let item= await axios.get(`${url}/api/v1/items/${id}`,{headers:{
                 "x-access-token":token
             }})  
             setItem(item.data.item)   

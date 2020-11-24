@@ -3,6 +3,8 @@ import "./header.css";
 import axios from "axios";
 import FilterDetails from "../searchFilter/searchFilter";
 function Header({setSearchItems,setSearchText}) {   
+    let url = process.env.REACT_APP_BACKEND_URL; 
+
     const [searchValue,setSearchValue]= useState(null);  
     const [filter,setFilter] = useState({gender:undefined,categories:undefined,sizes:[],minPrice:undefined,maxPrice:undefined,brands:undefined,});  
     const [showFilterDetails,setShowFilterDetails] = useState(false)
@@ -11,7 +13,7 @@ function Header({setSearchItems,setSearchText}) {
         if(searchValue){
             let token = localStorage.getItem("token");
         try{
-        let result = await axios.get(`https://sportstore1.herokuapp.com/api/v1/items?search=${searchValue}`,{
+        let result = await axios.get(`${url}/api/v1/items?search=${searchValue}`,{
             headers:{
                 "x-access-token":token
             }
@@ -44,7 +46,7 @@ function Header({setSearchItems,setSearchText}) {
         let minPrice = filter.minPrice;
         let maxPrice = filter.maxPrice;
         try{
-            const result = await axios.get(`https://sportstore1.herokuapp.com/api/v1/items?category=${category}&brand=${brand}&gender=${gender}&price=${minPrice}-${maxPrice}`,{
+            const result = await axios.get(`${url}/api/v1/items?category=${category}&brand=${brand}&gender=${gender}&price=${minPrice}-${maxPrice}`,{
                 headers:{
                     "x-access-token":token
                 }

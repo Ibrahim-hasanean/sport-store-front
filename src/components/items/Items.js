@@ -6,6 +6,8 @@ import InfiniteScroll from 'react-infinite-scroller';
 let popularPage =0;
 let newPage =0;
 function Items({popular,sales,newItems,setPopularItems , setNewItems,setSalesItems}) {
+    let url = process.env.REACT_APP_BACKEND_URL; 
+
     const [showItem,setShowItem] = useState("popular");  
     let setShow=(e)=>{
         console.log(e.target.name) 
@@ -18,7 +20,7 @@ function Items({popular,sales,newItems,setPopularItems , setNewItems,setSalesIte
         popular.items.length>0?
          skip=popular.skip+15:
          skip=0;
-        let items =await axios.get(`https://sportstore1.herokuapp.com/api/v1/items?sortBy=likesNumber&skip=${skip}&limit=${15}`,{
+        let items =await axios.get(`${url}/api/v1/items?sortBy=likesNumber&skip=${skip}&limit=${15}`,{
             headers:{
                 "x-access-token":token
             }
@@ -40,7 +42,7 @@ function Items({popular,sales,newItems,setPopularItems , setNewItems,setSalesIte
         newItems.items.length>0?
          skip=popular.skip+15:
          skip=0;      
-        let items =await axios.get(`https://sportstore1.herokuapp.com/api/v1/items?sortBy=createdAt&skip=${skip}&limit=${15}`,{
+        let items =await axios.get(`${url}/api/v1/items?sortBy=createdAt&skip=${skip}&limit=${15}`,{
             headers:{
                 "x-access-token":token
             }
@@ -60,7 +62,7 @@ function Items({popular,sales,newItems,setPopularItems , setNewItems,setSalesIte
         sales.items.length>0?
          skip=popular.skip+15:
          skip=0;      
-        let items =await axios.get(`https://sportstore1.herokuapp.com/api/v1/items?sortBy=salesTimes&skip=${skip}&limit=${15}`,{
+        let items =await axios.get(`${url}/api/v1/items?sortBy=salesTimes&skip=${skip}&limit=${15}`,{
             headers:{
                 "x-access-token":token
             }
