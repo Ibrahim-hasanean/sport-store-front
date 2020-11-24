@@ -9,7 +9,7 @@ import SearchItems from '../../components/searchItems/searchItems';
 import useContext from "../../context/AuthContext";
 import CartIcon from "../../components/CartIcon/CartIcon";
 import paymentContext from "../../context/PaymentContext";
-let  Home=() => {   
+let  Home=() => {    
     let {logout} = useContext()  
     let {paymentSuccess,setPaymentSuccess} = paymentContext();
     const [popular, setPopularItems]= useState({limit:15,skip:0 ,items:[],hasMore:true});
