@@ -32,6 +32,15 @@
     font-size: larger;
     font-weight: 500;
     color: #2F7EB8;
-    border:solid 1px #2F7EB8;
+    border:solid 1px #87aac4;
     border-radius: 15px;
+}
+
+@media only screen and (max-width:768px){
+    #naming{
+        justify-content: space-around;
+    }
+    #naming button{
+        width: min-content;
+    }
 }

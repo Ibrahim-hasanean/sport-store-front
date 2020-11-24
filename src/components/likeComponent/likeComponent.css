@@ -16,4 +16,12 @@
     justify-self: center;
     color: red;
 }
+.removeFav{
+    width: 40px;
+    height: 30px;
+    align-self: center;
+    justify-self: center;
+    color: grey;
+    
+}
   
