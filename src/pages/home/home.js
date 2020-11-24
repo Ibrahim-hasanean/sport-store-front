@@ -24,7 +24,9 @@ let  Home=() => {
     {_id:"5f7748ed1872bd00179a1b78",team:"Real Madrid",type:"Home",catagory:"shirt",season:"19/20",discount:"14%",price:"$60",mainImage:"https://storage.googleapis.com/sport-store-290016.appspot.com/1601652973234cover1.jpg?GoogleAccessId=firebase-adminsdk-4jbpj%40sport-store-290016.iam.gserviceaccount.com&Expires=16447017600&Signature=SJMICg2ypTsV%2Fk7u%2F0TOrO5O2jQiQJFFhAWry6Xh9yKQ3UAjxl9S8PfBW1zDzRDPQZ8iG9Dtkfsm2JR9TRfxUVsimuSEhiG2oUyXf2U%2BqVkoN8dnr5FawafRRPz%2B4Jv3JukgfS%2FtOqFg905y5oqXo0BbBtcn5REOkX0N4CGxiMf9PHSEwS%2FYUOSXJRpPjAkFl0JsIJvfoFsYTgjD54EtrMMYg1H5MCBVlXVUk9FXa6xPLCzbg7gmiL07K8ezpLFjhGFg%2BQ6A4Jt8ZMEcJlEmh4%2BrFT8Ml%2FTD0Z8FvpoL36YlPfGqkHpqEsmx8SFaN06jP%2Fylx0m7A1apy5dDYO00iA%3D%3D"},
     {_id:"5f73433bc2ee9125c0144a8a",team:"Barcelona",type:"Home",catagory:"shirt",season:"19/20",discount:"14%",price:"$60",mainImage:"https://storage.googleapis.com/sport-store-290016.appspot.com/1601389371577cover1.jpg?GoogleAccessId=firebase-adminsdk-4jbpj%40sport-store-290016.iam.gserviceaccount.com&Expires=16447010400&Signature=qMNRq%2FrRpBXHoCu8ia9Gw2jIZyLVdSUYNxv%2BHIV2DTFmbEeTg7RGp7%2FEhuciJvKpOnfXd3pfiuMAFrJ%2F7IBU0MPOIvNc5TnTdP6VtENKClHWeqx1hDqoDJu9l6ePwCHwu9G0CmhvrsEbDGTDp93m37waLWM0oJ%2BEij0yak5SUeEcc8d4Z38iNmmNFXYPfWS%2FmWi4UIx%2FpfjFpEWUVwgnr1Px92Rq4Ufrd4oc1vY8kkuTs1gWN2mujEtfTcUAQqkj87Kg6rEZ0jb9ONzZXL3uxEZDj%2BZfBZAee1NnJnc2bCnPbSl%2FS15WJIeO8sdH7FNtyqiBzNNbqXmhmBN%2BINLCQQ%3D%3D"}
     ]   
-    let showPaymentSuccess =()=>{
+    
+    useEffect(()=>{
+        let showPaymentSuccess =()=>{
             setTimeout(() => {
                 let elemnt = document.getElementById("paymentSuccess");
                 if(elemnt){
@@ -50,10 +52,9 @@ let  Home=() => {
                 }
             }
         }
-    useEffect(()=>{
         homeItems()
         showPaymentSuccess()
-    },[]) 
+    },[logout,popular,newItems,sales,setPaymentSuccess]) 
    
     return (       
         <div id="home">
