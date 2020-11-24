@@ -54,7 +54,7 @@ let  Home=() => {
         }
         homeItems()
         showPaymentSuccess()
-    },[logout,popular,newItems,sales,setPaymentSuccess]) 
+    },[]) 
    
     return (       
         <div id="home">
