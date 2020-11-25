@@ -10,7 +10,7 @@ import useContext from "../../context/AuthContext";
 import CartIcon from "../../components/CartIcon/CartIcon";
 import paymentContext from "../../context/PaymentContext";
 let  Home=() => {    
-    let {logout} = useContext()  
+    let {logout,isToken} = useContext()  
     let {paymentSuccess,setPaymentSuccess} = paymentContext();
     const [popular, setPopularItems]= useState({limit:15,skip:0 ,items:[],hasMore:true});
     const [newItems, setNewItems]= useState({limit:15,skip:0,items:[] ,hasMore:true});
@@ -42,7 +42,7 @@ let  Home=() => {
     }
     const homeItems = async ()=>{
             try{
-            let token = localStorage.getItem("token")
+            let token = localStorage.getItem("token") || isToken;
             let url = process.env.REACT_APP_BACKEND_URL 
             let items = await axios.get(`${url}/api/v1/items/home`,{headers:{"x-access-token":token}})
             setPopularItems({...popular,items:[...items.data.popular]})
