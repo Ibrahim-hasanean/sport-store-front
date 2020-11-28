@@ -5,7 +5,7 @@ import "./nav.css"
 export default function Nav() {
     let {isToken,logout,userData} = authContext();    
     let {isAdmin} = userData   
-    const [location,setLocation] = useState(window.location.pathname)
+    const [location,setLocation] = useState("/login")
     let admin;
     if(isAdmin) admin= <li><Link to="/admin">Admin page</Link></li>
     const changeLocation = (e)=>{
@@ -13,10 +13,10 @@ export default function Nav() {
         {
             setLocation("/signup")
         }
-        if(location === "/signup")
-        {
+        else  {
             setLocation("/login")
         }
+        
 return;
         
     }
