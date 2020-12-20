@@ -10,13 +10,13 @@
     width: 100%;
     position: relative;   
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     flex-wrap: wrap;
     align-items: center;
 }
 #ordersContainer h2{
     position: relative;
-    left: 110px;
+    /* left: 110px; */
 }
 
 @media only screen and (max-width:765px){

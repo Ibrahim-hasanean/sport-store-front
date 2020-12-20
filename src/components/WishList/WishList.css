@@ -4,17 +4,20 @@
     top: 80px;
     display: flex;
     flex-direction: column;
+    
 }
 #wishList{
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    position: relative;    
+    position: relative;  
+    justify-content: center;  
 }
+/*
 #wishListContainer h3{
     position: relative;
     right: 50px;
-}
+} */
 
 @media only screen and (max-width:765px){
     #wishListContainer{

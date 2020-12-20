@@ -2,25 +2,17 @@ import React,{useState} from 'react'
 import {Link} from "react-router-dom"
 import authContext from "../../context/AuthContext"
 import "./nav.css"
-export default function Nav() {
+const  Nav = (props)=> {
     let {isToken,logout,userData} = authContext();    
     let {isAdmin} = userData   
-    const [location,setLocation] = useState("/login")
+    const [location,setLocation] = useState(String(window.location.pathname))
     let admin;
     if(isAdmin) admin= <li><Link to="/admin">Admin page</Link></li>
     const changeLocation = (e)=>{
-        if(location === "/login")
-        {
-            setLocation("/signup")
-        }
-        else  {
-            setLocation("/login")
-        }
-        
-return;
-        
+            let location = window.location.pathname
+            setLocation(String(location))
     }
-          
+     
     return (
         <div>         
             <nav id="nav">   
@@ -44,3 +36,5 @@ return;
         </div>
     )
 }
+
+export default Nav
