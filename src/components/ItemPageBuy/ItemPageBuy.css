@@ -1,66 +1,65 @@
-#itemBuyContainer{
-    width: 100%;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    margin-top: 25px;
-
+#itemBuyContainer {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
 }
 
-#itemBuyContainer button{    
-    width: 35%;
-    padding: 15px;
-    border: none;
-    border-radius: 15px;
-    height: 50px;
+#itemBuyContainer button {
+  width: 35%;
+  padding: 15px;
+  border: none;
+  border-radius: 15px;
+  height: 50px;
 }
-.cartbutton{
-    background: #2F7EB8;
-    color: white;
-}
-
-.buybutton{
-    background: #2F7EB84F;
-    color: #2F7EB8;
-    border: 2px solid #2F7EB8;
+.cartbutton {
+  background: #2f7eb8;
+  color: white;
 }
 
-#itemBuyContainer button:last-child{
-    background: #2F7EB8;
-    color: white;
-}
-#likeDiv{
-    position: relative;
-    width: 40px;
-    height: 30px; 
-    background: #8E8E93;  
-    margin: auto;
-    top: 15px;   
-}
-#likeDivContainer{
-    position: relative;
-    width: 60px;
-    height: 60px; 
-    background: #8E8E93; 
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-
+.buybutton {
+  background: #2f7eb84f;
+  color: #2f7eb8;
+  border: 2px solid #2f7eb8;
 }
 
-@media only screen and  (max-width: 1024px) and (min-width: 768px)  {
-    #itemBuyContainer button{
-        width: 40%;
-        height: 72px;
-    }
-    #fav{
-        width: 85%;
-        height: 100%;
-    }
-    .pageDetailesLabel,.itemDetailes select,.itemDetailes button{
-        font-size: 40px;
-    }  
+#itemBuyContainer button:last-child {
+  background: #2f7eb8;
+  color: white;
+}
+#likeDiv {
+  position: relative;
+  width: 40px;
+  height: 30px;
+  background: #8e8e93;
+  margin: auto;
+  top: 15px;
+}
+#likeDivContainer {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background: #8e8e93;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+}
 
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+  #itemBuyContainer button {
+    width: 40%;
+    height: 72px;
+  }
+  #fav {
+    width: 85%;
+    height: 100%;
+  }
+  .pageDetailesLabel,
+  .itemDetailes select,
+  .itemDetailes button {
+    font-size: 40px;
+  }
 }
 /* 
 @media only screen and (width: 768px){   

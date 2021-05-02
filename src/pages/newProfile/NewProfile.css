@@ -1,0 +1,7 @@
+.newProfile-container {
+  width: 100%;
+  position: relative;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+}

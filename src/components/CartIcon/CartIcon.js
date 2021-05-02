@@ -1,9 +1,9 @@
-import React,{useState} from 'react';
+import React, { useState } from "react";
 import "./CartIcon.css";
 import ShoppingIcon from "../../assets/icons/shopping.png";
 import style from "styled-components";
 import PaymentContext from "../../context/PaymentContext";
-import { Redirect } from 'react-router-dom';
+import { Redirect, useHistory } from "react-router-dom";
 let Icon = style.div`
 position: fixed;
 width: 80px;
@@ -26,22 +26,28 @@ z-index:4;
   
 `;
 const CartIcon = () => {
-    let {buyItems} = PaymentContext();
-    const [showCartItems,setShowCartItems] = useState(false)
-   
-    let getCartItems = ()=>{
-        if(buyItems.length>0) setShowCartItems(true);       
-    }
-    if(showCartItems){
-        return <Redirect to={{
-            pathname:"/items/payment/summary"
-        }} />
-    }
-    return (
-        <Icon  onClick={getCartItems} className="cartIcon">
-            <p>{buyItems.length}</p>
-        </Icon>
-    )
-}
+  let { buyItems } = PaymentContext();
+  const [showCartItems, setShowCartItems] = useState(false);
+  const history = useHistory();
+  let getCartItems = () => {
+    // if (buyItems.length > 0) setShowCartItems(true);
+    if (buyItems.length > 0) history.push("/items/payment/summary");
+  };
+  // if (showCartItems) {
+  //   return (
+  //     <Redirect
+  //       from="/"
+  //       to={{
+  //         pathname: "/items/payment/summary",
+  //       }}
+  //     />
+  //   );
+  // }
+  return (
+    <Icon onClick={getCartItems} className="cartIcon">
+      <p>{buyItems.length}</p>
+    </Icon>
+  );
+};
 
-export default CartIcon
+export default CartIcon;

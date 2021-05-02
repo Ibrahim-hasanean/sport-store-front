@@ -1,0 +1,19 @@
+.NewProfileSideBar {
+  width: 30%;
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  box-shadow: 10px 10px 5px grey;
+}
+
+.NewProfileSideBar img {
+  width: 40%;
+  border-radius: 50%;
+}
+.NewProfileSideBar p {
+  color: rgb(139, 134, 134);
+  font-size: medium;
+  margin: 0;
+}
